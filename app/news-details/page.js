@@ -1,6 +1,7 @@
 ﻿'use client'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import AminitiesSection from '@/app/_components/AminitiesSection'
+import MobileNav from '@/app/_components/MobileNav'
 
 export default function NewsDetailsPage() {
   return (
@@ -22,6 +23,7 @@ export default function NewsDetailsPage() {
                 </div>
                 <div className="offcanvas__close"><button><i className="fas fa-times"></i></button></div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.</p>
                 <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
@@ -103,7 +105,7 @@ export default function NewsDetailsPage() {
       {/* Breadcrumb Start */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: "url('/assets/img/breadcrumb.jpg')" }}
+        style={{ backgroundImage: "url('/assets/images/home/NDS_5148.jpg')" }}
       >
         <div className="container">
           <div className="page-heading">
@@ -135,8 +137,8 @@ export default function NewsDetailsPage() {
                   </div>
                   <h4 className="news-title">01. Personalized Stays Over Standard Luxury</h4>
                   <p>Custom-curated itineraries, room preferences remembered, and private concierge services now set the standard for top-tier comfort.</p>
-                  <h4 className="news-title">02. Wellness-Centered Getaways</h4>
-                  <p>Modern travelers seek spa access, healthy dining options, and mindful experiences that restore body and mind during their stay.</p>
+                  <h4 className="news-title">02. Business &amp; Leisure Blend</h4>
+                  <p>Modern travelers seek fine dining, business facilities, and comfortable amenities that keep them productive and refreshed during their stay.</p>
                   <h4 className="news-title">03. Experience-Driven Travel</h4>
                   <p>Guests want more than a room — they want local cultural experiences, curated tours, and unforgettable moments that money can&apos;t buy.</p>
                   <h4 className="news-title">04. Boutique &amp; Bespoke Properties</h4>

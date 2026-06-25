@@ -1,8 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { imgUrl } from '@/lib/imgUrl'
+import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import AminitiesSection from '@/app/_components/AminitiesSection'
+import MobileNav from '@/app/_components/MobileNav'
 
 const HARDCODED_FALLBACK = [
   { id: 1, title: 'Luxury Travel Trends for the Modern Explorer',   excerpt: 'Discover smart interior design tips that transform your home into a stylish sanctuary.',        image: { url: '/assets/img/home-2/news/10.jpg' }, publishedAt: '2025-03-11', slug: 'luxury-travel-trends', views: 19, ctaText: 'VIEW MORE', ctaLink: '/news' },
@@ -18,7 +19,7 @@ export default function NewsPage() {
   const [recentPosts, setRecentPosts]         = useState([])
   const [page, setPage]                       = useState(1)
   const [totalPages, setTotalPages]           = useState(1)
-  const [breadcrumbBg, setBreadcrumbBg]       = useState('/assets/img/breadcrumb.jpg')
+  const [breadcrumbBg, setBreadcrumbBg]       = useState('/assets/images/home/NDS_5400.jpg')
   const [breadcrumbTitle, setBreadcrumbTitle] = useState('Blog & News')
   const [recentPostsTitle, setRecentPostsTitle] = useState('Recent Posts')
   const [popularTagsTitle, setPopularTagsTitle] = useState('Popular Tags')
@@ -44,7 +45,9 @@ export default function NewsPage() {
     fetch('/api/hero/news')
       .then(r => r.json())
       .then(d => {
-        if (d.data?.backgroundImage) setBreadcrumbBg(d.data.backgroundImage)
+        const heroBg = d.data?.backgroundImage
+        const heroBgUrl = typeof heroBg === 'string' ? heroBg : heroBg?.url
+        if (heroBgUrl && !heroBgUrl.startsWith('/assets/img/')) setBreadcrumbBg(heroBg)
         if (d.data?.title) setBreadcrumbTitle(d.data.title)
       })
       .catch(() => {})
@@ -176,7 +179,7 @@ export default function NewsPage() {
       {/* Breadcrumb */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${imgUrl(breadcrumbBg, '/assets/img/breadcrumb.jpg')}')` }}
+        style={{ backgroundImage: `url('${bannerBg([breadcrumbBg], '/assets/images/home/NDS_5400.jpg')}')` }}
       >
         <div className="container">
           <div className="page-heading">

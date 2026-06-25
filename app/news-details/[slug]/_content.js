@@ -1,8 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { imgUrl } from '@/lib/imgUrl'
+import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import AminitiesSection from '@/app/_components/AminitiesSection'
+import MobileNav from '@/app/_components/MobileNav'
 
 const FOOTER_BG = 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80'
 
@@ -47,7 +48,7 @@ export default function BlogDetailContent({ slug }) {
   const phone = settings.phone?.[0] || '+91 9088809991'
   const email = settings.email?.[0] || 'fom@parkqueenhotels.com'
   const address = settings.address || 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India'
-  const heroBg = imgUrl(hero?.backgroundImage, '/assets/img/breadcrumb.jpg')
+  const heroBg = bannerBg([hero?.backgroundImage], '/assets/images/home/NDS_5001.jpg')
   const heroTitle = hero?.title || 'Blog Details'
 
   return (
@@ -67,6 +68,7 @@ export default function BlogDetailContent({ slug }) {
                 </div>
                 <div className="offcanvas__close"><button><i className="fas fa-times"></i></button></div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
                 <h4 className="d-xl-block">Contact Info</h4>

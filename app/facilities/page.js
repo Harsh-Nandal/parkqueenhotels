@@ -1,22 +1,23 @@
 ﻿'use client'
 import { useState, useEffect } from 'react'
-import { imgUrl } from '@/lib/imgUrl'
+import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import AminitiesSection from '@/app/_components/AminitiesSection'
+import MobileNav from '@/app/_components/MobileNav'
 
 const STATIC_FACILITIES = [
-  { _id: 'f1', image: { url: '/assets/img/home-1/room/faciliti-1.jpg' }, icon: 'fa-utensils', title: 'Restaurant & Dining', text: 'Savor exceptional cuisine crafted by our chefs — from traditional Indian flavours to continental delights.' },
-  { _id: 'f2', image: { url: '/assets/img/home-1/room/faciliti-2.jpg' }, icon: 'fa-restroom', title: 'Spa & Wellness', text: 'Rejuvenate your body and mind with our premium spa treatments.' },
-  { _id: 'f3', image: { url: '/assets/img/home-1/room/faciliti-3.jpg' }, icon: 'fa-champagne-glasses', title: 'Banquets & Events', text: 'Host your weddings, corporate events, and celebrations in our beautifully appointed banquet halls.' },
-  { _id: 'f4', image: { url: '/assets/img/home-1/room/faciliti-4.jpg' }, icon: 'fa-dumbbell', title: 'Fitness & Gym', text: 'Stay on top of your routine with our fully equipped fitness centre.' },
-  { _id: 'f6', image: { url: '/assets/img/home-1/room/faciliti-6.jpg' }, icon: 'fa-car-rear', title: 'Free Guest Parking', text: 'Secure, complimentary parking for all guests.' },
+  { _id: 'f1', image: { url: '/assets/images/dining/NDS_5117.jpg'  }, icon: 'fa-utensils',           title: 'Restaurant & Dining', text: 'Savor exceptional cuisine crafted by our chefs — from traditional Indian flavours to continental delights.' },
+  { _id: 'f2', image: { url: '/assets/images/dining/NDS_5151.jpg'  }, icon: 'fa-briefcase',           title: 'Business Centre',    text: 'Fully equipped business centre with high-speed internet, printing, and support services for corporate guests.' },
+  { _id: 'f3', image: { url: '/assets/images/dining/NDS_4994.jpg'  }, icon: 'fa-champagne-glasses',   title: 'Banquets & Events',  text: 'Host your weddings, corporate events, and celebrations in our beautifully appointed banquet halls.' },
+  { _id: 'f4', image: { url: '/assets/images/home/NDS_5344.jpg'    }, icon: 'fa-presentation-screen', title: 'Conference Hall',    text: 'State-of-the-art conference and meeting facilities for corporate events and business gatherings.' },
+  { _id: 'f6', image: { url: '/assets/images/home/NDS_5400.jpg'    }, icon: 'fa-car-rear',            title: 'Free Guest Parking', text: 'Secure, complimentary parking for all guests.' },
 ]
 const FOOTER_BG = 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80'
 
 export default function FacilitiesPage() {
   // null = still loading (prevents flash of old static images)
   const [facilities, setFacilities] = useState(null)
-  const [breadcrumbBg, setBreadcrumbBg] = useState('/assets/img/breadcrumb.jpg')
+  const [breadcrumbBg, setBreadcrumbBg] = useState('/assets/images/home/NDS_5397.jpg')
   const [footerBg, setFooterBg] = useState(FOOTER_BG)
   const [hero, setHero] = useState({})
 
@@ -66,6 +67,7 @@ export default function FacilitiesPage() {
                   <button><i className="fas fa-times"></i></button>
                 </div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.</p>
                 <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
@@ -165,7 +167,7 @@ export default function FacilitiesPage() {
       {/* Breadcrumb Wrapper Start */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${imgUrl(hero?.backgroundImage || breadcrumbBg, '/assets/img/breadcrumb.jpg')}')` }}
+        style={{ backgroundImage: `url('${bannerBg([hero?.backgroundImage, breadcrumbBg], '/assets/images/home/NDS_5397.jpg')}')` }}
       >
         <div className="container">
           <div className="page-heading">
@@ -186,7 +188,7 @@ export default function FacilitiesPage() {
         <div className="container">
           <div className="row g-4">
             {(facilities || []).map((f, i) => {
-              const imgSrc = imgUrl(f.image, `/assets/img/home-1/room/faciliti-${i + 1}.jpg`)
+              const imgSrc = (f.image?.url && !f.image.url.startsWith('/assets/img/')) ? f.image.url : ['/assets/images/dining/NDS_5117.jpg','/assets/images/dining/NDS_5151.jpg','/assets/images/dining/NDS_4994.jpg','/assets/images/home/NDS_5344.jpg','/assets/images/home/NDS_5397.jpg'][i] || '/assets/images/dining/NDS_5117.jpg'
               return (
                 <div
                   key={f._id || f.id || i}

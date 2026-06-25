@@ -1,7 +1,8 @@
 ﻿'use client'
 import { useState, useEffect } from 'react'
-import { imgUrl } from '@/lib/imgUrl'
+import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
+import MobileNav from '@/app/_components/MobileNav'
 import AminitiesSection from '@/app/_components/AminitiesSection'
 
 const STATIC_ABOUT = {
@@ -19,11 +20,11 @@ const STATIC_FEATURED_POSTS = [
 ]
 
 const STATIC_FACILITIES = [
-  { _id: 'f1', image: { url: '/assets/img/home-1/room/faciliti-1.jpg' }, icon: 'fa-utensils', title: 'Restaurant & Dining', text: 'Savor exceptional cuisine crafted by our chefs.' },
-  { _id: 'f2', image: { url: '/assets/img/home-1/room/faciliti-2.jpg' }, icon: 'fa-restroom', title: 'Spa & Wellness', text: 'Rejuvenate your body and mind with our premium spa treatments.' },
-  { _id: 'f3', image: { url: '/assets/img/home-1/room/faciliti-3.jpg' }, icon: 'fa-champagne-glasses', title: 'Banquets & Events', text: 'Host your events in our beautifully appointed banquet halls.' },
-  { _id: 'f4', image: { url: '/assets/img/home-1/room/faciliti-4.jpg' }, icon: 'fa-dumbbell', title: 'Fitness & Gym', text: 'Stay on top of your routine with our fully equipped fitness centre.' },
-  { _id: 'f6', image: { url: '/assets/img/home-1/room/faciliti-6.jpg' }, icon: 'fa-car-rear', title: 'Free Guest Parking', text: 'Secure, complimentary parking for all guests.' },
+  { _id: 'f1', image: { url: '/assets/images/dining/NDS_5117.jpg'  }, icon: 'fa-utensils',           title: 'Restaurant & Dining', text: 'Savor exceptional cuisine crafted by our chefs.' },
+  { _id: 'f2', image: { url: '/assets/images/dining/NDS_5151.jpg'  }, icon: 'fa-briefcase',           title: 'Business Centre',    text: 'Fully equipped business centre with high-speed internet, printing, and support services for corporate guests.' },
+  { _id: 'f3', image: { url: '/assets/images/dining/NDS_4994.jpg'  }, icon: 'fa-champagne-glasses',   title: 'Banquets & Events',  text: 'Host your events in our beautifully appointed banquet halls.' },
+  { _id: 'f4', image: { url: '/assets/images/home/NDS_5344.jpg'    }, icon: 'fa-presentation-screen', title: 'Conference Hall',    text: 'State-of-the-art conference and meeting facilities for corporate events and business gatherings.' },
+  { _id: 'f6', image: { url: '/assets/images/home/NDS_5400.jpg'    }, icon: 'fa-car-rear',            title: 'Free Guest Parking', text: 'Secure, complimentary parking for all guests.' },
 ]
 
 const STATIC_GALLERY = [
@@ -116,6 +117,7 @@ export default function AboutPage() {
                   </button>
                 </div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>
                   Nullam dignissim, ante scelerisque the is euismod fermentum odio
@@ -262,7 +264,7 @@ export default function AboutPage() {
       {/* Breadcrumb Wrapper Start */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${imgUrl(hero?.backgroundImage || about.breadcrumbBg, '/assets/img/breadcrumb.jpg')}')` }}
+        style={{ backgroundImage: `url('${bannerBg([hero?.backgroundImage, about.breadcrumbBg], '/assets/images/home/NDS_5148.jpg')}')` }}
       >
         <div className="container">
           <div className="page-heading">
@@ -344,7 +346,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="row g-4">
             {(facilities || []).map((f, i) => {
-              const imgSrc = imgUrl(f.image, `/assets/img/home-1/room/faciliti-${i + 1}.jpg`)
+              const imgSrc = (f.image?.url && !f.image.url.startsWith('/assets/img/')) ? f.image.url : ['/assets/images/dining/NDS_5117.jpg','/assets/images/dining/NDS_5151.jpg','/assets/images/dining/NDS_4994.jpg','/assets/images/home/NDS_5344.jpg','/assets/images/home/NDS_5397.jpg'][i] || '/assets/images/dining/NDS_5117.jpg'
               return (
                 <div
                   key={f._id || f.id || i}
@@ -379,7 +381,7 @@ export default function AboutPage() {
         <div className="scrolling-wrap">
           <div className="comm">
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
             <div className="cmn-textslide">
               <i className="fa-sharp fa-solid fa-star"></i> Rohtak&apos;s Premier Hotel
@@ -391,15 +393,15 @@ export default function AboutPage() {
               <i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in Rohtak
             </div>
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
           </div>
           <div className="comm">
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
             <div className="cmn-textslide">
               <i className="fa-sharp fa-solid fa-star"></i> Modern City Hotel
@@ -411,15 +413,15 @@ export default function AboutPage() {
               <i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in Rohtak
             </div>
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
           </div>
           <div className="comm">
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
             <div className="cmn-textslide">
               <i className="fa-sharp fa-solid fa-star"></i> Modern City Hotel
@@ -431,10 +433,10 @@ export default function AboutPage() {
               <i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in Rohtak
             </div>
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
             <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
+              <i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge
             </div>
           </div>
         </div>

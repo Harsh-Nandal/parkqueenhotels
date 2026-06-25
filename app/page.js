@@ -2,6 +2,13 @@
 import { useState, useEffect } from 'react'
 import { imgUrl } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
+import MobileNav from '@/app/_components/MobileNav'
+
+const HERO_SLIDES = [
+  { title: 'Luxury Rooms',   img: '/assets/images/rooms/NDS_5403.jpg'   },
+  { title: 'Fine Dining',    img: '/assets/images/dining/NDS_5117.jpg'  },
+  { title: 'Bar & Lounge',  img: '/assets/images/home/NDS_5001.jpg'    },
+]
 
 const STATIC_OFFERS = [
   { _id: 's1', title: 'Rohtak Heritage Tour', image: { url: '/assets/img/home-1/offer/radius-1.jpg' }, cardImage: { url: '/assets/img/home-1/offer/radius-5.jpg' }, cardTitle: 'ParkQueen Special' },
@@ -20,7 +27,6 @@ export default function HomePage() {
   const [c, setC] = useState({})
   const [offers, setOffers] = useState([])
   const [testimonials, setTestimonials] = useState([])
-
   useEffect(() => {
     fetch('/api/content/home')
       .then(r => r.json())
@@ -131,6 +137,7 @@ export default function HomePage() {
                   </button>
                 </div>
               </div>
+              <MobileNav />
               {/* outer <p> changed to <div> — block elements cannot be nested inside <p> in JSX */}
               <div className="text d-none d-xl-block">
                 <p>
@@ -331,39 +338,16 @@ export default function HomePage() {
                   </div>
                   <div className="swiper hero-slider">
                     <div className="swiper-wrapper">
-                      <div className="swiper-slide">
-                        <div className="hero-item">
-                          <div className="hero-image">
-                            <img
-                              src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80"
-                              alt="Luxury pool"
-                            />
+                      {HERO_SLIDES.map((slide, i) => (
+                        <div key={i} className="swiper-slide">
+                          <div className="hero-item">
+                            <div className="hero-image">
+                              <img src={slide.img} alt={slide.title} />
+                            </div>
+                            <h6>{slide.title}</h6>
                           </div>
-                          <h6>Swimming Pool</h6>
                         </div>
-                      </div>
-                      <div className="swiper-slide">
-                        <div className="hero-item">
-                          <div className="hero-image">
-                            <img
-                              src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80"
-                              alt="Luxury lobby"
-                            />
-                          </div>
-                          <h6>Guest Lobby</h6>
-                        </div>
-                      </div>
-                      <div className="swiper-slide">
-                        <div className="hero-item">
-                          <div className="hero-image">
-                            <img
-                              src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"
-                              alt="Luxury room"
-                            />
-                          </div>
-                          <h6>Luxury Rooms</h6>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -450,64 +434,28 @@ export default function HomePage() {
       <div className="marque-section fix section-padding pt-0">
         <div className="scrolling-wrap">
           <div className="comm">
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Rohtak&apos;s Premier Hotel
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Best Luxury Resort in Rohtak
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in Rohtak
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Rohtak&apos;s Premier Hotel</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Best Luxury Resort in Rohtak</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in Rohtak</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Banquet Hall</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Conference Hall</div>
           </div>
           <div className="comm">
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Modern City Hotel
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Best Luxury Resort
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in California
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Modern City Hotel</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Best Luxury Resort</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in Rohtak</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Banquet Hall</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Conference Hall</div>
           </div>
           <div className="comm">
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Modern City Hotel
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Best Luxury Resort
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in California
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
-            <div className="cmn-textslide">
-              <i className="fa-sharp fa-solid fa-star"></i> Health and Fitness
-            </div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Bar &amp; Lounge</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Modern City Hotel</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Best Luxury Resort</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Luxury Hotel in Rohtak</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Banquet Hall</div>
+            <div className="cmn-textslide"><i className="fa-sharp fa-solid fa-star"></i> Conference Hall</div>
           </div>
         </div>
       </div>
@@ -627,9 +575,9 @@ export default function HomePage() {
                       data-wow-delay=".7s"
                     >
                       <div className="icon">
-                        <img src="/assets/img/home-1/icon/06.svg" alt="img" />
+                        <i className="fa-solid fa-martini-glass-citrus" style={{ fontSize: 40, display: 'block', color: '#fff' }}></i>
                       </div>
-                      <p>Swimming - Pool</p>
+                      <p>Bar &amp; Lounge</p>
                     </div>
                   </div>
                 </div>

@@ -294,7 +294,7 @@ export default function AdminServicePage() {
                 <label className="flabel">Keywords <span style={{ fontWeight: 400, color: '#9ca3af' }}>(comma-separated)</span></label>
                 <input className="finput" value={form.seo.keywords}
                   onChange={e => setSeo('keywords', e.target.value)}
-                  placeholder="hotel services Rohtak, banquet Rohtak, spa hotel…" />
+                  placeholder="hotel services Rohtak, banquet hall Rohtak, conference hall, bar lounge…" />
               </div>
               <ImageUploader
                 label="OG / Social Share Image (1200×630px)"

@@ -1,8 +1,9 @@
 ﻿'use client'
 import { useState, useEffect } from 'react'
-import { imgUrl } from '@/lib/imgUrl'
+import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import AminitiesSection from '@/app/_components/AminitiesSection'
+import MobileNav from '@/app/_components/MobileNav'
 
 const DEFAULTS = {
   phone: ['+91 9088809991'],
@@ -14,7 +15,7 @@ const FOOTER_BG = 'https://images.unsplash.com/photo-1494526585095-c41746248156?
 
 export default function ContactPage() {
   const [s, setS] = useState(DEFAULTS)
-  const [breadcrumbBg, setBreadcrumbBg] = useState('/assets/img/breadcrumb.jpg')
+  const [breadcrumbBg, setBreadcrumbBg] = useState('/assets/images/home/NDS_5344.jpg')
   const [hero, setHero] = useState({})
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [submitting, setSubmitting] = useState(false)
@@ -99,6 +100,7 @@ export default function ContactPage() {
                   <button><i className="fas fa-times"></i></button>
                 </div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.</p>
                 <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
@@ -198,7 +200,7 @@ export default function ContactPage() {
       {/* Breadcrumb Wrapper Start */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${imgUrl(hero?.backgroundImage || breadcrumbBg, '/assets/img/breadcrumb.jpg')}')` }}
+        style={{ backgroundImage: `url('${bannerBg([hero?.backgroundImage, breadcrumbBg], '/assets/images/home/NDS_5344.jpg')}')` }}
       >
         <div className="container">
           <div className="page-heading">

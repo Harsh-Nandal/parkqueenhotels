@@ -9,7 +9,7 @@ export async function generateMetadata() {
     return {
       title: seo.title || 'Our Services',
       description: seo.description ||
-        'Discover premium hotel services at The ParkQueen Hotel, Rohtak, Haryana — fine dining, spa & wellness, banquet halls, gym, room service and more.',
+        'Discover premium hotel services at The ParkQueen Hotel, Rohtak, Haryana — fine dining, banquet hall, conference hall, bar & lounge, business centre, and room service.',
       ...(seo.keywords ? { keywords: seo.keywords.split(',').map(k => k.trim()) } : {}),
       openGraph: {
         title: seo.title || 'Our Services — The ParkQueen Hotel',
@@ -30,7 +30,7 @@ export async function generateMetadata() {
   } catch {
     return {
       title: 'Our Services',
-      description: 'Discover premium hotel services at The ParkQueen Hotel, Rohtak.',
+      description: 'Discover premium hotel services at The ParkQueen Hotel, Rohtak — banquet hall, conference hall, bar & lounge, business centre, and fine dining.',
     }
   }
 }

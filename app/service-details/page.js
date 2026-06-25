@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import AminitiesSection from '@/app/_components/AminitiesSection'
+import MobileNav from '@/app/_components/MobileNav'
 
 export default function ServiceDetailsPage() {
   const [booking, setBooking] = useState({ name: '', email: '', phone: '', checkIn: '', checkOut: '', roomType: 'Room', guests: '1' })
@@ -73,6 +74,7 @@ export default function ServiceDetailsPage() {
                   </button>
                 </div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>
                   Nullam dignissim, ante scelerisque the is euismod fermentum odio
@@ -211,7 +213,7 @@ export default function ServiceDetailsPage() {
       {/* Breadcrumb Wrapper Start */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: "url('/assets/img/breadcrumb.jpg')" }}
+        style={{ backgroundImage: "url('/assets/images/home/12121.jpg.jpeg')" }}
       >
         <div className="container">
           <div className="page-heading">
@@ -241,8 +243,8 @@ export default function ServiceDetailsPage() {
               <div className="col-lg-8 col-12">
                 <div className="details-image">
                   <img
-                    src="/assets/img/inner-page/service-details/details-1.jpg"
-                    alt="img"
+                    src="/assets/images/rooms/NDS_5403.jpg"
+                    alt="The ParkQueen Hotel — Premium Rooms"
                   />
                 </div>
                 <div className="details-content">
@@ -311,9 +313,9 @@ export default function ServiceDetailsPage() {
                       <li>
                         <span>
                           <i className="fa-solid fa-circle-check"></i> Access to
-                          Family Pool &amp; Kids&apos; Play Area
+                          Business &amp; Conference Facilities
                         </span>{' '}
-                        Safe, clean recreational areas for fun and relaxation.
+                        Fully equipped conference rooms and business centre available on request.
                       </li>
                       <li>
                         <span>
@@ -328,16 +330,16 @@ export default function ServiceDetailsPage() {
                     <div className="col-md-6">
                       <div className="details-image-2">
                         <img
-                          src="/assets/img/inner-page/service-details/details-2.jpg"
-                          alt="img"
+                          src="/assets/images/rooms/NDS_5407.jpg"
+                          alt="Hotel Room"
                         />
                       </div>
                     </div>
                     <div className="col-md-6">
                       <div className="details-image-2">
                         <img
-                          src="/assets/img/inner-page/service-details/details-3.jpg"
-                          alt="img"
+                          src="/assets/images/dining/NDS_5117.jpg"
+                          alt="Hotel Dining"
                         />
                       </div>
                     </div>
@@ -515,27 +517,47 @@ export default function ServiceDetailsPage() {
                     </div>
                     <ul className="category-list">
                       <li>
-                        <a href="/service-details">Smart Key</a>
+                        <a href="/service-details">Enjoy Free Wi-Fi</a>
                         <span><i className="fa-solid fa-circle-chevron-right"></i></span>
                       </li>
                       <li>
-                        <a href="/service-details">Free Car Parking</a>
+                        <a href="/service-details">Air Condition</a>
                         <span><i className="fa-solid fa-circle-chevron-right"></i></span>
                       </li>
                       <li>
-                        <a href="/service-details">Fast Wifi Internet</a>
+                        <a href="/service-details">LCD In All Rooms</a>
                         <span><i className="fa-solid fa-circle-chevron-right"></i></span>
                       </li>
                       <li>
-                        <a href="/service-details">Room Service</a>
+                        <a href="/service-details">Tea / Coffee Maker</a>
                         <span><i className="fa-solid fa-circle-chevron-right"></i></span>
                       </li>
                       <li>
-                        <a href="/service-details">Food &amp; Drink</a>
+                        <a href="/service-details">Running Hot &amp; Cold Water</a>
                         <span><i className="fa-solid fa-circle-chevron-right"></i></span>
                       </li>
                       <li>
-                        <a href="/service-details">Swimming Pool</a>
+                        <a href="/service-details">Vallet Parking</a>
+                        <span><i className="fa-solid fa-circle-chevron-right"></i></span>
+                      </li>
+                      <li>
+                        <a href="/service-details">Laundry &amp; Dry Cleaning</a>
+                        <span><i className="fa-solid fa-circle-chevron-right"></i></span>
+                      </li>
+                      <li>
+                        <a href="/service-details">24 Hours Power Back Up</a>
+                        <span><i className="fa-solid fa-circle-chevron-right"></i></span>
+                      </li>
+                      <li>
+                        <a href="/service-details">Lift</a>
+                        <span><i className="fa-solid fa-circle-chevron-right"></i></span>
+                      </li>
+                      <li>
+                        <a href="/service-details">Taxi On Call</a>
+                        <span><i className="fa-solid fa-circle-chevron-right"></i></span>
+                      </li>
+                      <li>
+                        <a href="/service-details">Doctor On Call</a>
                         <span><i className="fa-solid fa-circle-chevron-right"></i></span>
                       </li>
                     </ul>
@@ -657,7 +679,7 @@ export default function ServiceDetailsPage() {
                     className="service-details-contact-bg text-center bg-cover"
                     style={{
                       backgroundImage:
-                        "url('/assets/img/inner-page/service-details/bg.jpg')",
+                        "url('/assets/images/home/NDS_5344.jpg')",
                     }}
                   >
                     <h3>

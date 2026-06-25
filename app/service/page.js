@@ -1,16 +1,17 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { imgUrl } from '@/lib/imgUrl'
+import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import AminitiesSection from '@/app/_components/AminitiesSection'
+import MobileNav from '@/app/_components/MobileNav'
 
 const STATIC_SERVICES_BOXES = [
-  { _id: 'sb1', icon: 'fa-key',          title: 'Smart Key Access' },
-  { _id: 'sb2', icon: 'fa-car-rear',     title: 'Free Car Parking' },
-  { _id: 'sb3', icon: 'fa-wifi',         title: 'Fast Wifi Internet' },
-  { _id: 'sb4', icon: 'fa-concierge-bell', title: 'Room Service' },
-  { _id: 'sb5', icon: 'fa-utensils',     title: 'Food & Drink' },
-  { _id: 'sb6', icon: 'fa-dumbbell',     title: 'Fitness & Gym' },
+  { _id: 'sb1', icon: 'fa-wifi',            title: 'Enjoy Free Wi-Fi' },
+  { _id: 'sb2', icon: 'fa-wind',            title: 'Air Condition' },
+  { _id: 'sb3', icon: 'fa-mug-hot',         title: 'Tea / Coffee Maker' },
+  { _id: 'sb4', icon: 'fa-square-parking',  title: 'Vallet Parking' },
+  { _id: 'sb5', icon: 'fa-shirt',           title: 'Laundry & Dry Cleaning' },
+  { _id: 'sb6', icon: 'fa-bolt',            title: '24 Hours Power Back Up' },
 ]
 
 const STATIC_OFFERS = [
@@ -36,7 +37,7 @@ export default function ServicePage() {
   const [homeContent, setHomeContent] = useState({})
   const [stats, setStats]             = useState(STATIC_STATS)
   const [statsBg, setStatsBg]         = useState('/assets/img/home-2/feature/02.jpg')
-  const [breadcrumbBg, setBreadcrumbBg] = useState('/assets/img/breadcrumb.jpg')
+  const [breadcrumbBg, setBreadcrumbBg] = useState('/assets/images/home/NDS_5001.jpg')
   const [hero, setHero]               = useState({})
   const [settings, setSettings]       = useState({})
   const [footerBg, setFooterBg]       = useState(FOOTER_BG)
@@ -108,6 +109,7 @@ export default function ServicePage() {
                 </div>
                 <div className="offcanvas__close"><button><i className="fas fa-times"></i></button></div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
                 <h4 className="d-xl-block">Contact Info</h4>
@@ -182,7 +184,7 @@ export default function ServicePage() {
       {/* Breadcrumb */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${imgUrl(hero?.backgroundImage || breadcrumbBg, '/assets/img/breadcrumb.jpg')}')` }}
+        style={{ backgroundImage: `url('${bannerBg([hero?.backgroundImage, breadcrumbBg], '/assets/images/home/NDS_5001.jpg')}')` }}
       >
         <div className="container">
           <div className="page-heading">
@@ -201,13 +203,6 @@ export default function ServicePage() {
       {/* Service Icon Boxes Section */}
       <section className="service-section section-padding pb-0 fix">
         <div className="container">
-          {(boxes.subtitle || boxes.heading) && (
-            <div className="section-title text-center mb-5">
-              {boxes.subtitle && <span className="sub-title wow fadeInUp">{boxes.subtitle}</span>}
-              {boxes.heading  && <h2 className="wow fadeInUp" data-wow-delay=".3s">{boxes.heading}</h2>}
-              {boxes.description && <p className="wow fadeInUp" data-wow-delay=".5s" style={{ maxWidth: 680, margin: '0 auto' }}>{boxes.description}</p>}
-            </div>
-          )}
           <div className="row g-4">
             {activeServices.slice(0, 6).map((svc, i) => (
               <div
@@ -218,9 +213,9 @@ export default function ServicePage() {
               >
                 <div className="service-box-items">
                   <div className="icon">
-                    {svc.image?.url
-                      ? <img src={svc.image.url} alt={svc.title} loading="lazy" />
-                      : <i className={`fa-solid ${svc.icon || 'fa-star'}`} style={{ fontSize: 32, color: '#cda434' }}></i>
+                    {(svc.image?.url && !svc.image.url.startsWith('/assets/img/'))
+                      ? <img src={svc.image.url} alt={svc.title} loading="lazy" style={{ width: 56, height: 56, objectFit: 'cover', borderRadius: 8 }} />
+                      : <i className={`fa-solid ${svc.icon || 'fa-star'}`} style={{ fontSize: 36, color: '#cda434' }}></i>
                     }
                   </div>
                   <h6>{svc.title}</h6>
