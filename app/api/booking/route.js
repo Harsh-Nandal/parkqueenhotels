@@ -37,7 +37,7 @@ export async function POST(request) {
           Booking.findByIdAndUpdate(doc._id, { emailSent: true }).catch(() => {})
         }
       })
-      .catch(e => console.error('[Booking] Email error:', e.message))
+      .catch(() => {})
 
     return ok(
       { bookingRef: doc.bookingRef, id: doc._id },

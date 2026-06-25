@@ -110,7 +110,7 @@ export default function BlogDetailContent({ slug }) {
                   <a href="/" className="header-logo-2"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel" /></a>
                 </div>
               </div>
-              <div className="mean__menu-wrapper">
+              <div className="mean__menu-wrapper d-none d-xl-block">
                 <div className="main-menu">
                   <nav id="mobile-menu">
                     <ul>

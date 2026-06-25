@@ -46,8 +46,8 @@ export async function GET() {
       if (!s) s = (await SiteSettings.create(DEFAULTS)).toObject()
       return NextResponse.json({ success: true, data: s })
     }
-  } catch (e) {
-    console.error('[Settings GET]', e.message)
+  } catch {
+    // fall through to defaults
   }
   return NextResponse.json({ success: true, data: DEFAULTS })
 }
@@ -66,8 +66,7 @@ export async function PUT(request) {
       new: true, upsert: true, runValidators: true, setDefaultsOnInsert: true,
     })
     return NextResponse.json({ success: true, data: updated })
-  } catch (e) {
-    console.error('[Settings PUT]', e.message)
-    return NextResponse.json({ success: false, error: e.message }, { status: 500 })
+  } catch {
+    return NextResponse.json({ success: false, error: 'An internal server error occurred' }, { status: 500 })
   }
 }

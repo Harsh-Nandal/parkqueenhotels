@@ -31,7 +31,7 @@ export default function NewsDetailsPage() {
                 <ul className="d-xl-block">
                   <li className="d-flex align-items-center">
                     <div className="offcanvas__contact-icon"><i className="fal fa-map-marker-alt"></i></div>
-                    <div className="offcanvas__contact-text"><a target="_blank" href="#">The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India</a></div>
+                    <div className="offcanvas__contact-text"><a target="_blank" href="https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana">The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India</a></div>
                   </li>
                   <li className="d-flex align-items-center">
                     <div className="offcanvas__contact-icon mr-15"><i className="fal fa-envelope"></i></div>
@@ -39,7 +39,7 @@ export default function NewsDetailsPage() {
                   </li>
                   <li className="d-flex align-items-center">
                     <div className="offcanvas__contact-icon mr-15"><i className="fal fa-clock"></i></div>
-                    <div className="offcanvas__contact-text"><a target="_blank" href="#">Mon-Friday, 09am - 05pm</a></div>
+                    <div className="offcanvas__contact-text"><a target="_blank" href="/contact">Mon-Friday, 09am - 05pm</a></div>
                   </li>
                   <li className="d-flex align-items-center">
                     <div className="offcanvas__contact-icon mr-15"><i className="far fa-phone"></i></div>
@@ -47,10 +47,10 @@ export default function NewsDetailsPage() {
                   </li>
                 </ul>
                 <div className="social-icon d-flex align-items-center">
-                  <a href="#"><i className="fab fa-facebook-f"></i></a>
-                  <a href="#"><i className="fab fa-twitter"></i></a>
-                  <a href="#"><i className="fab fa-youtube"></i></a>
-                  <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                  <a href="/contact"><i className="fab fa-facebook-f"></i></a>
+                  <a href="/contact"><i className="fab fa-twitter"></i></a>
+                  <a href="/contact"><i className="fab fa-youtube"></i></a>
+                  <a href="/contact"><i className="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@ export default function NewsDetailsPage() {
                   <a href="/" className="header-logo-2"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="logo-img" /></a>
                 </div>
               </div>
-              <div className="mean__menu-wrapper">
+              <div className="mean__menu-wrapper d-none d-xl-block">
                 <div className="main-menu">
                   <nav id="mobile-menu">
                     <ul>
@@ -91,7 +91,7 @@ export default function NewsDetailsPage() {
                   <div className="icon"><i className="fa-solid fa-phone"></i></div>
                   <h6><a href="tel:+919088809991">+91 9088809991</a></h6>
                 </div>
-                <div className="header-button"><a href="#" className="theme-btn">BOOK NOW</a></div>
+                <div className="header-button"><a href="/contact" className="theme-btn">BOOK NOW</a></div>
                 <div className="header__hamburger d-xl-none my-auto">
                   <div className="sidebar__toggle"><i className="fas fa-bars"></i></div>
                 </div>
@@ -168,10 +168,10 @@ export default function NewsDetailsPage() {
                     </div>
                     <div className="col-lg-5 col-12 mt-3 mt-lg-0 text-lg-end">
                       <div className="social-share">
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
+                        <a href="/contact"><i className="fab fa-twitter"></i></a>
+                        <a href="/contact"><i className="fa-brands fa-youtube"></i></a>
+                        <a href="/contact"><i className="fab fa-linkedin-in"></i></a>
+                        <a href="/contact"><i className="fab fa-facebook-f"></i></a>
                       </div>
                     </div>
                   </div>
@@ -349,10 +349,10 @@ export default function NewsDetailsPage() {
                 <div className="single-footer-widget">
                   <div className="widget-title"><h5>hotel best services</h5></div>
                   <ul className="list">
-                    <li><a href="#">Airport pickup &amp; drop</a></li>
-                    <li><a href="#">Room booking</a></li>
-                    <li><a href="#">special offers</a></li>
-                    <li><a href="#">special foods</a></li>
+                    <li><a href="/contact">Airport pickup &amp; drop</a></li>
+                    <li><a href="/service-details">Room booking</a></li>
+                    <li><a href="/service">special offers</a></li>
+                    <li><a href="/service">special foods</a></li>
                   </ul>
                 </div>
               </div>
@@ -381,15 +381,15 @@ export default function NewsDetailsPage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i className="fa-brands fa-twitter"></i></a>
-                <a href="#"><i className="fa-brands fa-instagram"></i></a>
-                <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="/contact"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="/contact"><i className="fa-brands fa-twitter"></i></a>
+                <a href="/contact"><i className="fa-brands fa-instagram"></i></a>
+                <a href="/contact"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="/contact">Terms &amp; Conditions</a></li>
                 <li>/</li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="/contact">Privacy Policy</a></li>
                 <li>/</li>
                 <li><a href="/contact">Contact Us</a></li>
               </ul>

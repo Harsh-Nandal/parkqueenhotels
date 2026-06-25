@@ -136,7 +136,7 @@ export default function AboutPage() {
                       <i className="fal fa-map-marker-alt"></i>
                     </div>
                     <div className="offcanvas__contact-text">
-                      <a target="_blank" href="#">
+                      <a target="_blank" href="https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana">
                         The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak,
                         Haryana 124001, India
                       </a>
@@ -159,7 +159,7 @@ export default function AboutPage() {
                       <i className="fal fa-clock"></i>
                     </div>
                     <div className="offcanvas__contact-text">
-                      <a target="_blank" href="#">
+                      <a target="_blank" href="/contact">
                         Mon-Friday, 09am - 05pm
                       </a>
                     </div>
@@ -174,10 +174,10 @@ export default function AboutPage() {
                   </li>
                 </ul>
                 <div className="social-icon d-flex align-items-center">
-                  <a href="#"><i className="fab fa-facebook-f"></i></a>
-                  <a href="#"><i className="fab fa-twitter"></i></a>
-                  <a href="#"><i className="fab fa-youtube"></i></a>
-                  <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                  <a href="/contact"><i className="fab fa-facebook-f"></i></a>
+                  <a href="/contact"><i className="fab fa-twitter"></i></a>
+                  <a href="/contact"><i className="fab fa-youtube"></i></a>
+                  <a href="/contact"><i className="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function AboutPage() {
                   </a>
                 </div>
               </div>
-              <div className="mean__menu-wrapper">
+              <div className="mean__menu-wrapper d-none d-xl-block">
                 <div className="main-menu">
                   <nav id="mobile-menu">
                     <ul>
@@ -246,7 +246,7 @@ export default function AboutPage() {
                   </h6>
                 </div>
                 <div className="header-button">
-                  <a href="#" className="theme-btn">
+                  <a href="/contact" className="theme-btn">
                     BOOK NOW
                   </a>
                 </div>
@@ -294,9 +294,7 @@ export default function AboutPage() {
               <div className="col-lg-6">
                 <div className="about-image">
                   <img src={imgUrl(about.mainImage, STATIC_ABOUT.mainImage)} alt="img" />
-                  <div className="shape">
-                    <img src="/assets/img/home-1/about/shape.png" alt="img" />
-                  </div>
+                  
                 </div>
               </div>
               <div className="col-lg-6">
@@ -326,7 +324,7 @@ export default function AboutPage() {
                     <div className="top-shape">
                       <img src="/assets/img/home-1/about/bg-shape.png" alt="img" />
                     </div>
-                    <a href="#" className="theme-btn">{about.buttonText || STATIC_ABOUT.buttonText}</a>
+                    <a href="/about" className="theme-btn">{about.buttonText || STATIC_ABOUT.buttonText}</a>
                     <span className="button-text">
                       <span className="me-3 d-line">view reels</span>
                       <a href={about.videoLink || '#'} className="video-btn ripple video-popup">
@@ -457,8 +455,8 @@ export default function AboutPage() {
                   <div className="swiper testimonial-slider">
                     <div className="swiper-wrapper">
                       {(testimonials.length ? testimonials : [
-                        { _id: 'at1', name: 'Marvin McKinney', role: 'Product Manager', rating: 5, content: "From the moment we arrived, every detail was flawless. The staff anticipated our every need, and the suite was pure perfection. We'll be back soon!", image: null },
-                        { _id: 'at2', name: 'Sarah Johnson',   role: 'Travel Blogger',  rating: 5, content: "An absolutely exceptional stay. The rooms are beautifully appointed, the staff incredibly attentive, and the dining experience was world-class.", image: null },
+                        { _id: 'at1', name: 'Amit Verma',   role: 'Family Traveler, Gurgaon', rating: 5, content: "We celebrated our anniversary at The ParkQueen Hotel and it was absolutely wonderful. The banquet arrangements were beautiful, the rooms immaculate, and the service was second to none. Will definitely visit again!", image: { url: 'https://ui-avatars.com/api/?name=Amit+Verma&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true' } },
+                        { _id: 'at2', name: 'Sunita Mehta', role: 'Corporate Guest, Noida',    rating: 5, content: "Best hotel in Rohtak without a doubt! Clean, comfortable, and the staff goes above and beyond. The bar & lounge is perfect for unwinding after a busy day. The breakfast spread was delicious — a true five-star experience.", image: { url: 'https://ui-avatars.com/api/?name=Sunita+Mehta&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true' } },
                       ]).map(t => (
                         <div key={t._id} className="swiper-slide">
                           <div className="content">
@@ -471,7 +469,7 @@ export default function AboutPage() {
                             <div className="client-info-item">
                               <div className="info-item">
                                 <img
-                                  src={imgUrl(t.image, '/assets/img/home-1/testimonial/01.png')}
+                                  src={imgUrl(t.image, `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name || 'Guest')}&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true`)}
                                   alt={t.name}
                                 />
                                 <div className="content">
@@ -635,10 +633,10 @@ export default function AboutPage() {
                     <h5>hotel best services</h5>
                   </div>
                   <ul className="list">
-                    <li><a href="#">Airport pickup &amp; drop</a></li>
-                    <li><a href="#">Room booking</a></li>
-                    <li><a href="#">special offers</a></li>
-                    <li><a href="#">special foods</a></li>
+                    <li><a href="/contact">Airport pickup &amp; drop</a></li>
+                    <li><a href="/service-details">Room booking</a></li>
+                    <li><a href="/service">special offers</a></li>
+                    <li><a href="/service">special foods</a></li>
                   </ul>
                 </div>
               </div>
@@ -692,15 +690,15 @@ export default function AboutPage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i className="fa-brands fa-twitter"></i></a>
-                <a href="#"><i className="fa-brands fa-instagram"></i></a>
-                <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="/contact"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="/contact"><i className="fa-brands fa-twitter"></i></a>
+                <a href="/contact"><i className="fa-brands fa-instagram"></i></a>
+                <a href="/contact"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="/contact">Terms &amp; Conditions</a></li>
                 <li>/</li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="/contact">Privacy Policy</a></li>
                 <li>/</li>
                 <li><a href="/contact">Contact Us</a></li>
               </ul>

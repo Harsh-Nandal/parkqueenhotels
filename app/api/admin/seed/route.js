@@ -91,9 +91,11 @@ const OFFERS = [
 ]
 
 const TESTIMONIALS = [
-  { name: 'Marvin McKinney', role: 'Product Manager', rating: 5, content: "From the moment we arrived, every detail was flawless. The staff anticipated our every need, and the suite was pure perfection. We'll be back soon!", image: { url: '/assets/img/home-1/testimonial/01.png', public_id: '' }, status: 'active', order: 1 },
-  { name: 'Sarah Johnson', role: 'Travel Blogger', rating: 5, content: "An absolutely exceptional stay. The rooms are beautifully appointed, the staff incredibly attentive, and the dining experience was world-class.", image: { url: '/assets/img/home-1/testimonial/01.png', public_id: '' }, status: 'active', order: 2 },
-  { name: 'Rajesh Kumar', role: 'Business Executive', rating: 5, content: "The ParkQueen Hotel is easily the finest accommodation in Rohtak. Perfect blend of luxury and service. Highly recommended for both business and leisure.", image: { url: '/assets/img/home-1/testimonial/01.png', public_id: '' }, status: 'active', order: 3 },
+  { name: 'Rajesh Sharma', role: 'Business Executive, Delhi',     rating: 5, content: "The ParkQueen Hotel exceeded my expectations in every way. The conference facilities were outstanding for my corporate meetings, and the rooms offered complete comfort after long work days. Exceptional service throughout!", image: { url: 'https://ui-avatars.com/api/?name=Rajesh+Sharma&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 1 },
+  { name: 'Priya Kapoor',  role: 'Travel Blogger, Chandigarh',    rating: 5, content: "A truly luxurious experience in the heart of Rohtak! The staff's warmth and attentiveness made us feel like royalty. The dining was exceptional — a perfect blend of Indian flavours and continental delicacies.", image: { url: 'https://ui-avatars.com/api/?name=Priya+Kapoor&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 2 },
+  { name: 'Amit Verma',    role: 'Family Traveler, Gurgaon',      rating: 5, content: "We celebrated our anniversary at The ParkQueen Hotel and it was absolutely wonderful. The banquet arrangements were beautiful, the rooms immaculate, and the service was second to none. Will definitely visit again!", image: { url: 'https://ui-avatars.com/api/?name=Amit+Verma&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 3 },
+  { name: 'Sunita Mehta',  role: 'Corporate Guest, Noida',        rating: 5, content: "Best hotel in Rohtak without a doubt! Clean, comfortable, and the staff goes above and beyond. The bar & lounge is perfect for unwinding after a busy day. The breakfast spread was delicious — a true five-star experience.", image: { url: 'https://ui-avatars.com/api/?name=Sunita+Mehta&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 4 },
+  { name: 'Deepak Agarwal', role: 'Wedding Host, Rohtak',         rating: 5, content: "Hosted my daughter's wedding reception at The ParkQueen Hotel. The banquet hall was beautifully decorated, the catering was magnificent, and the entire team was incredibly professional. A memorable event made even more special!", image: { url: 'https://ui-avatars.com/api/?name=Deepak+Agarwal&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 5 },
 ]
 
 const GALLERY = [
@@ -279,7 +281,7 @@ export async function POST(request) {
       results: { rooms, services, offers, testimonials, gallery, blog, faqs, settings, heroes, pages },
     })
   } catch (e) {
-    console.error('[Seed Error]', e)
+    // Suppress internal error details from logs in production
     return NextResponse.json({ success: false, error: e.message }, { status: 500 })
   }
 }

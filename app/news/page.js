@@ -105,6 +105,7 @@ export default function NewsPage() {
                 </div>
                 <div className="offcanvas__close"><button><i className="fas fa-times"></i></button></div>
               </div>
+              <MobileNav />
               <div className="text d-none d-xl-block">
                 <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
                 <h4 className="d-xl-block">Contact Info</h4>
@@ -146,7 +147,7 @@ export default function NewsPage() {
                   <a href="/" className="header-logo-2"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel" /></a>
                 </div>
               </div>
-              <div className="mean__menu-wrapper">
+              <div className="mean__menu-wrapper d-none d-xl-block">
                 <div className="main-menu">
                   <nav id="mobile-menu">
                     <ul>
@@ -194,17 +195,17 @@ export default function NewsPage() {
       </div>
 
       {/* News Listing */}
-      <section className="news-standard-section section-padding">
-        <div className="container">
+      <section className="news-standard-section section-padding" style={{ overflowX: 'hidden' }}>
+        <div className="container" style={{ maxWidth: '100%' }}>
           <div className="news-standard-wrapper">
             <div className="row g-4">
 
               {/* Main post list */}
-              <div className="col-lg-8 col-12">
+              <div className="col-lg-8 col-12" style={{ minWidth: 0 }}>
                 {displayPosts.map((post, i) => (
-                  <div key={post._id || post.id || i} className="news-card-items-4">
-                    <div className="news-image">
-                      <img src={imgUrl(post.image, '/assets/img/home-2/news/10.jpg')} alt={post.title} loading="lazy" />
+                  <div key={post._id || post.id || i} className="news-card-items-4" style={{ overflow: 'hidden' }}>
+                    <div className="news-image" style={{ overflow: 'hidden' }}>
+                      <img src={imgUrl(post.image, '/assets/img/home-2/news/10.jpg')} alt={post.title} loading="lazy" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div className="news-content">
                       <ul className="date-list">
@@ -244,18 +245,25 @@ export default function NewsPage() {
               </div>
 
               {/* Sidebar */}
-              <div className="col-lg-4 col-12">
-                <div className="main-sideber sticky-style">
+              <div className="col-lg-4 col-12" style={{ minWidth: 0 }}>
+                <div className="main-sideber sticky-style" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
                   <div className="single-sideber-widget">
                     <div className="widget-title"><h3>{recentPostsTitle}</h3></div>
                     <div className="recent-post-area">
                       {displayRecent.map((p, i) => (
-                        <div key={p._id || p.id || i} className="recent-items">
-                          <div className="recent-thumb">
-                            <img src={imgUrl(p.image, `/assets/img/inner-page/news-details/post-${i + 1}.jpg`)} alt={p.title} loading="lazy" />
+                        <div key={p._id || p.id || i} className="recent-items" style={{ display: 'flex', alignItems: 'flex-start', gap: 12, overflow: 'hidden' }}>
+                          <div className="recent-thumb" style={{ flexShrink: 0, width: 80, height: 60, overflow: 'hidden', borderRadius: 6 }}>
+                            <img
+                              src={imgUrl(p.image, `/assets/img/inner-page/news-details/post-${i + 1}.jpg`)}
+                              alt={p.title}
+                              loading="lazy"
+                              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                            />
                           </div>
-                          <div className="recent-content">
-                            <h5><a href={p.ctaLink || `/news-details/${p.slug || p._id}`}>{p.title}</a></h5>
+                          <div className="recent-content" style={{ minWidth: 0, flex: 1 }}>
+                            <h5 style={{ margin: '0 0 4px', wordBreak: 'break-word', overflow: 'hidden' }}>
+                              <a href={p.ctaLink || `/news-details/${p.slug || p._id}`}>{p.title}</a>
+                            </h5>
                             <ul><li>{fmt(p.publishedAt)}</li></ul>
                           </div>
                         </div>
@@ -264,7 +272,7 @@ export default function NewsPage() {
                   </div>
                   <div className="single-sideber-widget mb-0">
                     <div className="widget-title"><h3>{popularTagsTitle}</h3></div>
-                    <div className="tagcloud">
+                    <div className="tagcloud" style={{ flexWrap: 'wrap' }}>
                       {tags.map(tag => <a key={tag} href={`/news?tag=${encodeURIComponent(tag)}`}>{tag}</a>)}
                     </div>
                   </div>

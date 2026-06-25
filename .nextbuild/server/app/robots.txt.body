@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+Host: https://parkqueenhotels.com
+Sitemap: https://parkqueenhotels.com/sitemap.xml

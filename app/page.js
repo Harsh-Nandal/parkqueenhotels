@@ -19,8 +19,8 @@ const STATIC_OFFERS = [
 ]
 
 const STATIC_TESTIMONIALS = [
-  { _id: 't1', name: 'Marvin McKinney', role: 'Product Manager', rating: 5, content: "From the moment we arrived, every detail was flawless. The staff anticipated our every need, and the suite was pure perfection. We'll be back soon!", image: { url: '/assets/img/home-1/testimonial/01.png' } },
-  { _id: 't2', name: 'Sarah Johnson', role: 'Travel Blogger', rating: 5, content: "An absolutely exceptional stay. The rooms are beautifully appointed, the staff incredibly attentive, and the dining experience was world-class.", image: { url: '/assets/img/home-1/testimonial/01.png' } },
+  { _id: 't1', name: 'Rajesh Sharma', role: 'Business Executive, Delhi', rating: 5, content: "The ParkQueen Hotel exceeded my expectations in every way. The conference facilities were outstanding for my corporate meetings, and the rooms offered complete comfort after long work days. Exceptional service throughout!", image: { url: 'https://ui-avatars.com/api/?name=Rajesh+Sharma&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true' } },
+  { _id: 't2', name: 'Priya Kapoor',  role: 'Travel Blogger, Chandigarh',  rating: 5, content: "A truly luxurious experience in the heart of Rohtak! The staff's warmth and attentiveness made us feel like royalty. The dining was exceptional — a perfect blend of Indian flavours and continental delicacies.", image: { url: 'https://ui-avatars.com/api/?name=Priya+Kapoor&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true' } },
 ]
 
 export default function HomePage() {
@@ -123,7 +123,7 @@ export default function HomePage() {
             <div className="offcanvas__content">
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                 <div className="offcanvas__logo">
-                  <a href="#">
+                  <a href="/">
                     <img
                       style={{ width: '18rem' }}
                       src="/assets/images/logo.png"
@@ -157,7 +157,7 @@ export default function HomePage() {
                       <i className="fal fa-map-marker-alt"></i>
                     </div>
                     <div className="offcanvas__contact-text">
-                      <a target="_blank" href="#">
+                      <a target="_blank" href="https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana">
                         The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak,
                         Haryana 124001, India
                       </a>
@@ -180,7 +180,7 @@ export default function HomePage() {
                       <i className="fal fa-clock"></i>
                     </div>
                     <div className="offcanvas__contact-text">
-                      <a target="_blank" href="#">
+                      <a target="_blank" href="/contact">
                         Mod-friday, 09am -05pm
                       </a>
                     </div>
@@ -195,16 +195,16 @@ export default function HomePage() {
                   </li>
                 </ul>
                 <div className="social-icon d-flex align-items-center">
-                  <a href="#">
+                  <a href="/contact">
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#">
+                  <a href="/contact">
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href="#">
+                  <a href="/contact">
                     <i className="fab fa-youtube"></i>
                   </a>
-                  <a href="#">
+                  <a href="/contact">
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                 </div>
@@ -222,14 +222,14 @@ export default function HomePage() {
             <div className="header-main">
               <div className="header-left">
                 <div className="logo">
-                  <a href="#" className="header-logo">
+                  <a href="/" className="header-logo">
                     <img
                       style={{ width: '18rem' }}
                       src="/assets/images/logo.png"
                       alt="logo-img"
                     />
                   </a>
-                  <a href="#" className="header-logo-2">
+                  <a href="/" className="header-logo-2">
                     <img
                       style={{ width: '18rem' }}
                       src="/assets/images/logo.png"
@@ -238,7 +238,7 @@ export default function HomePage() {
                   </a>
                 </div>
               </div>
-              <div className="mean__menu-wrapper">
+              <div className="mean__menu-wrapper d-none d-xl-block">
                 <div className="main-menu">
                   <nav id="mobile-menu">
                     <ul>
@@ -276,7 +276,7 @@ export default function HomePage() {
                   </h6>
                 </div>
                 <div className="header-button">
-                  <a href="#" className="theme-btn">
+                  <a href="/contact" className="theme-btn">
                     BOOK NOW
                   </a>
                 </div>
@@ -315,7 +315,7 @@ export default function HomePage() {
               <p>
                 {dyn(c.hero?.subtext, 'Indulge in a luxurious hotel stay where comfort meets style, offering world-class amenities, elegant design, and exceptional personalized service.')}
               </p>
-              <a href="#" className="theme-btn" style={{ background: '#cda434' }}>
+              <a href="/service-details" className="theme-btn" style={{ background: '#cda434' }}>
                 view our rooms
               </a>
               <div className="hero-wrapper" style={{ position: 'relative', zIndex: 2 }}>
@@ -413,7 +413,7 @@ export default function HomePage() {
                         alt="img"
                       />
                     </div>
-                    <a href="#" className="theme-btn">
+                    <a href="/about" className="theme-btn">
                       Know more about us
                     </a>
                     <span className="button-text">
@@ -507,13 +507,13 @@ export default function HomePage() {
                   <div className="content-item">
                     <div className="room-content">
                       <h6>{room.category}</h6>
-                      <h4><a href="#">{room.name}</a></h4>
+                      <h4><a href="/service-details">{room.name}</a></h4>
                       <ul className="list">
                         <li><i className="fa-solid fa-bed-front"></i> 1500 SQ.FT/Rooms</li>
                         <li><i className="fa-solid fa-user"></i> 02 Guests</li>
                       </ul>
                     </div>
-                    <a href="#" className="theme-btn">
+                    <a href="/service-details" className="theme-btn">
                       Book Now <i className="fa-solid fa-chevron-right"></i>
                     </a>
                   </div>
@@ -612,7 +612,7 @@ export default function HomePage() {
                         <a href="tel:+919088809991">+91 9088809991</a>
                       </h6>
                     </div>
-                    <a href="#" className="theme-btn">
+                    <a href="/contact" className="theme-btn">
                       <img src="/assets/img/button-bg-2.png" alt="img" />
                       BOOK NOW
                     </a>
@@ -632,16 +632,16 @@ export default function HomePage() {
               <div className="col-xl-12 sticky-style">
                 <div className="aminities-items">
                   <div className="aminities-image">
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
                     </a>
                   </div>
@@ -650,16 +650,16 @@ export default function HomePage() {
               <div className="col-xl-12 sticky-style">
                 <div className="aminities-items">
                   <div className="aminities-image">
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
                     </a>
                   </div>
@@ -668,16 +668,16 @@ export default function HomePage() {
               <div className="col-xl-12 sticky-style">
                 <div className="aminities-items mb-0">
                   <div className="aminities-image">
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
                     </a>
-                    <a href="#">
+                    <a href="/facilities">
                       <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
                     </a>
                     <div className="content-box">
@@ -685,9 +685,9 @@ export default function HomePage() {
                         <img src="/assets/img/home-1/aminiti/bg.png" alt="img" />
                       </div>
                       <h3>
-                        <a href="#">many more&apos;s</a>
+                        <a href="/facilities">many more&apos;s</a>
                       </h3>
-                      <a href="#" className="view-btn">
+                      <a href="/facilities" className="view-btn">
                         View All <i className="fa-solid fa-arrow-up-right"></i>
                       </a>
                     </div>
@@ -726,16 +726,16 @@ export default function HomePage() {
                       {mainSrc && <img src={mainSrc} alt="img" />}
                     </div>
                     <div className="service-content">
-                      <h3><a href="#">{offer.title}</a></h3>
-                      <a href="#" className="btn">view details</a>
+                      <h3><a href="/service">{offer.title}</a></h3>
+                      <a href="/service" className="btn">view details</a>
                     </div>
                   </div>
                   <div className="service-card-item">
                     <div className="services-image">
                       {cardSrc && <img src={cardSrc} alt="img" />}
                       <div className="content">
-                        <h3><a href="#">{offer.cardTitle || offer.description || offer.title}</a></h3>
-                        <a href="#" className="views-btn">view details</a>
+                        <h3><a href="/service">{offer.cardTitle || offer.description || offer.title}</a></h3>
+                        <a href="/service" className="views-btn">view details</a>
                       </div>
                     </div>
                   </div>
@@ -834,7 +834,7 @@ export default function HomePage() {
                             <div className="client-info-item">
                               <div className="info-item">
                                 <img
-                                  src={imgUrl(t.image, '/assets/img/home-1/testimonial/01.png')}
+                                  src={imgUrl(t.image, `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name || 'Guest')}&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true`)}
                                   alt={t.name}
                                 />
                                 <div className="content">
@@ -1085,16 +1085,16 @@ export default function HomePage() {
                   </div>
                   <ul className="list">
                     <li>
-                      <a href="#">Airport pickup &amp; drop</a>
+                      <a href="/contact">Airport pickup &amp; drop</a>
                     </li>
                     <li>
-                      <a href="#">Room booking</a>
+                      <a href="/service-details">Room booking</a>
                     </li>
                     <li>
-                      <a href="#">special offers</a>
+                      <a href="/service">special offers</a>
                     </li>
                     <li>
-                      <a href="#">special foods</a>
+                      <a href="/service">special foods</a>
                     </li>
                   </ul>
                 </div>
@@ -1153,37 +1153,37 @@ export default function HomePage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="#">
+                <a href="/contact">
                   <i className="fa-brands fa-linkedin"></i>
                 </a>
-                <a href="#">
+                <a href="/contact">
                   <i className="fa-brands fa-twitter"></i>
                 </a>
-                <a href="#">
+                <a href="/contact">
                   <i className="fa-brands fa-instagram"></i>
                 </a>
-                <a href="#">
+                <a href="/contact">
                   <i className="fa-brands fa-facebook-f"></i>
                 </a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
                 <li>
-                  <a href="#">Terms &amp; Conditions</a>
+                  <a href="/contact">Terms &amp; Conditions</a>
                 </li>
                 <li>/</li>
                 <li>
-                  <a href="#">Privacy Policy</a>
+                  <a href="/contact">Privacy Policy</a>
                 </li>
                 <li>/</li>
                 <li>
-                  <a href="#">Contact Us</a>
+                  <a href="/contact">Contact Us</a>
                 </li>
               </ul>
               <p className="wow fadeInRight" data-wow-delay=".7s">
                 Copyright&copy; <span>The ParkQueen Hotel</span>
               </p>
             </div>
-            <a href="#" className="footer-logo wow fadeInUp" data-wow-delay=".3s">
+            <a href="/" className="footer-logo wow fadeInUp" data-wow-delay=".3s">
               <img
                 style={{ width: '18rem' }}
                 src="/assets/images/logo.png"

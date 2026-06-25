@@ -32,7 +32,7 @@ export async function POST(request) {
           ContactMessage.findByIdAndUpdate(doc._id, { emailSent: true }).catch(() => {})
         }
       })
-      .catch(e => console.error('[Contact] Email error:', e.message))
+      .catch(() => {})
 
     return ok({ id: doc._id }, { message: 'Message sent successfully' })
   })
