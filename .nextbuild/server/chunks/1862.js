@@ -1,1 +1,0 @@
-"use strict";exports.id=1862,exports.ids=[1862],exports.modules={51862:(e,t,d)=>{d.r(t),d.d(t,{Content:()=>i});var n=d(11185),r=d.n(n);let s=new(r()).Schema({page:{type:String,required:!0,unique:!0,index:!0},data:{type:r().Schema.Types.Mixed,required:!0}},{timestamps:!0}),i=r().models.Content||r().model("Content",s)}};
