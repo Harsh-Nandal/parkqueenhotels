@@ -46,7 +46,7 @@ export default function BlogDetailContent({ slug }) {
 
   const fmt = d => d ? new Date(d).toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' }) : ''
   const phone = settings.phone?.[0] || '+91 9088809991'
-  const email = settings.email?.[0] || 'fom@parkqueenhotels.com'
+  const email = settings.email?.[0] || 'info@parkqueenhotels.com'
   const address = settings.address || 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India'
   const heroBg = bannerBg([hero?.backgroundImage], '/assets/images/home/NDS_5001.jpg')
   const heroTitle = hero?.title || 'Blog Details'

@@ -3,7 +3,7 @@
     "logo": "/assets/images/logo.png",
     "siteName": "The ParkQueen Hotel",
     "phone": "+91 9088809991",
-    "email": "fom@parkqueenhotels.com",
+    "email": "info@parkqueenhotels.com",
     "address": "The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India",
     "footerBg": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80",
     "footerTagline": "At The ParkQueen Hotel, luxury is a crafted experience that blends elegance, comfort, and exceptional service in Rohtak."
@@ -78,25 +78,25 @@
         "id": 1,
         "date": "April 12, 2025",
         "category": "Tips & Enjoy",
-        "title": "Toast to the Good Life Our Sommelier's Picks"
+        "title": "5 Ways to Make Your Weekend Getaway Truly Unforgettable"
       },
       {
         "id": 2,
-        "date": "April 12, 2025",
-        "category": "Tips & Enjoy",
-        "title": "Toast to the Good Life Our Sommelier's Picks"
+        "date": "April 18, 2025",
+        "category": "Dining",
+        "title": "A Culinary Journey: Signature Dishes You Must Try"
       },
       {
         "id": 3,
-        "date": "April 12, 2025",
-        "category": "Tips & Enjoy",
-        "title": "Toast to the Good Life Our Sommelier's Picks"
+        "date": "April 22, 2025",
+        "category": "Travel Guide",
+        "title": "How to Plan the Perfect Family Vacation at Our Resort"
       },
       {
         "id": 4,
-        "date": "April 12, 2025",
-        "category": "Tips & Enjoy",
-        "title": "Toast to the Good Life Our Sommelier's Picks"
+        "date": "May 2, 2025",
+        "category": "Rooms & Wellness",
+        "title": "Relax, Recharge & Reconnect with a Luxury Stay Experience"
       }
     ],
     "newsImages": [
@@ -225,12 +225,12 @@
       }
     ],
     "marqueeItems": [
-      "Bar & Lounge",
+      "Health and Fitness",
       "Rohtak's Premier Hotel",
       "Best Luxury Resort in Rohtak",
       "Luxury Hotel in Rohtak",
-      "Banquet Hall",
-      "Conference Hall"
+      "Modern City Hotel",
+      "Best Luxury Resort"
     ]
   },
   "about": {
@@ -371,7 +371,7 @@
       "public_id": "parkqueen/d6stlmgkhozcbdrlmzbt"
     },
     "location": "The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India",
-    "email": "fom@parkqueenhotels.com",
+    "email": "info@parkqueenhotels.com",
     "phone": "+91 9088809991",
     "mapEmbed": "https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed"
   },

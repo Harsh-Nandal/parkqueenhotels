@@ -51,7 +51,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/assets/img/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/images/logo.png" type="image/png" />
+        <link rel="icon" href="/assets/images/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/assets/images/logo.png" />
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/css/all.min.css" />
         <link rel="stylesheet" href="/assets/css/animate.css" />

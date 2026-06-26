@@ -81,7 +81,7 @@ export default function ServicePage() {
   }, [])
 
   const phone   = settings.phone?.[0]   || '+91 9088809991'
-  const email   = settings.email?.[0]   || 'fom@parkqueenhotels.com'
+  const email   = settings.email?.[0]   || 'info@parkqueenhotels.com'
   const address = settings.address      || 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India'
 
   const activeServices = services.length ? services : STATIC_SERVICES_BOXES
@@ -330,9 +330,9 @@ export default function ServicePage() {
                 <div className="single-footer-widget">
                   <div className="widget-title"><h5>check in &amp; out time</h5></div>
                   <ul className="date-list">
-                    <li>Mon to Fri : <span className="style-1">{settings.footer?.weekdayHours || '08:00 - 11:00'}</span></li>
-                    <li>Saturday : <span>{settings.footer?.saturdayHours || '08:00 - 11:00'}</span></li>
-                    <li>Sunday : <span className="style-3">{settings.footer?.sundayClosed ? 'Closed' : 'Open'}</span></li>
+                    <li>Check In : <span className="style-1">{settings.footer?.checkIn || '12:00 PM'}</span></li>
+                    <li>Check Out : <span>{settings.footer?.checkOut || '11:00 AM'}</span></li>
+                    <li>Open : <span className="style-1">24 Hours / 7 Days</span></li>
                   </ul>
                 </div>
               </div>

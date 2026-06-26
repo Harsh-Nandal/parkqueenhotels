@@ -147,9 +147,9 @@ export default function AboutPage() {
                       <i className="fal fa-envelope"></i>
                     </div>
                     <div className="offcanvas__contact-text">
-                      <a href="mailto:fom@parkqueenhotels.com">
-                        <span className="mailto:fom@parkqueenhotels.com">
-                          fom@parkqueenhotels.com
+                      <a href="mailto:info@parkqueenhotels.com">
+                        <span className="mailto:info@parkqueenhotels.com">
+                          info@parkqueenhotels.com
                         </span>
                       </a>
                     </div>
@@ -649,12 +649,9 @@ export default function AboutPage() {
                     <h5>check in &amp; out time</h5>
                   </div>
                   <ul className="date-list">
-                    <li>
-                      Mon to Fri :{' '}
-                      <span className="style-1">08:00 - 11:00</span>
-                    </li>
-                    <li>Saturday : <span>08:00 - 11:00</span></li>
-                    <li>Sunday : <span className="style-3">Closed</span></li>
+                    <li>Check In : <span className="style-1">12:00 PM</span></li>
+                    <li>Check Out : <span>11:00 AM</span></li>
+                    <li>Open : <span className="style-1">24 Hours / 7 Days</span></li>
                   </ul>
                 </div>
               </div>
@@ -674,8 +671,8 @@ export default function AboutPage() {
                     </li>
                     <li className="style-2">
                       <i className="fa-solid fa-envelope"></i>
-                      <a href="mailto:fom@parkqueenhotels.com">
-                        fom@parkqueenhotels.com
+                      <a href="mailto:info@parkqueenhotels.com">
+                        info@parkqueenhotels.com
                       </a>
                     </li>
                     <li className="style-2">

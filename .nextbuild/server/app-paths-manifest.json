@@ -1,0 +1,6 @@
+{
+  "/api/admin/seed/route": "app/api/admin/seed/route.js",
+  "/api/admin/content/route": "app/api/admin/content/route.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/home/page": "app/admin/home/page.js"
+}
