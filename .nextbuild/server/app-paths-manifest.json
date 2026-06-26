@@ -1,6 +1,7 @@
 {
-  "/api/admin/seed/route": "app/api/admin/seed/route.js",
-  "/api/admin/content/route": "app/api/admin/content/route.js",
-  "/admin/page": "app/admin/page.js",
-  "/admin/home/page": "app/admin/home/page.js"
+  "/page": "app/page.js",
+  "/api/gallery/route": "app/api/gallery/route.js",
+  "/api/testimonials/route": "app/api/testimonials/route.js",
+  "/api/content/[page]/route": "app/api/content/[page]/route.js",
+  "/api/offers/route": "app/api/offers/route.js"
 }
