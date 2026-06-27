@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react'
 import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
-import AminitiesSection from '@/app/_components/AminitiesSection'
-import MobileNav from '@/app/_components/MobileNav'
+import SharedHeader from '@/app/_components/SharedHeader'
+
 
 const HARDCODED_FALLBACK = [
   { id: 1, title: 'Luxury Travel Trends for the Modern Explorer',   excerpt: 'Discover smart interior design tips that transform your home into a stylish sanctuary.',        image: { url: '/assets/img/home-2/news/10.jpg' }, publishedAt: '2025-03-11', slug: 'luxury-travel-trends', views: 19, ctaText: 'VIEW MORE', ctaLink: '/news' },
@@ -86,96 +86,11 @@ export default function NewsPage() {
 
   const phone   = settings.phone?.[0]   || '+91 9088809991'
   const email   = settings.email?.[0]   || 'info@parkqueenhotels.com'
-  const address = settings.address      || 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India'
+  const address = settings.address      || 'The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India'
 
   return (
     <>
-      <button id="back-top" className="back-to-top show"><i className="fa-regular fa-arrow-up"></i></button>
-      <div className="mouseCursor cursor-outer"></div>
-      <div className="mouseCursor cursor-inner"></div>
-
-      {/* Offcanvas */}
-      <div className="fix-area">
-        <div className="offcanvas__info">
-          <div className="offcanvas__wrapper">
-            <div className="offcanvas__content">
-              <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                <div className="offcanvas__logo">
-                  <a href="/"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel logo" /></a>
-                </div>
-                <div className="offcanvas__close"><button><i className="fas fa-times"></i></button></div>
-              </div>
-              <MobileNav />
-              <div className="text d-none d-xl-block">
-                <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
-                <h4 className="d-xl-block">Contact Info</h4>
-                <ul className="d-xl-block">
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon"><i className="fal fa-map-marker-alt"></i></div>
-                    <div className="offcanvas__contact-text"><a href="/contact">{address}</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="fal fa-envelope"></i></div>
-                    <div className="offcanvas__contact-text"><a href={`mailto:${email}`}>{email}</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="far fa-phone"></i></div>
-                    <div className="offcanvas__contact-text"><a href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</a></div>
-                  </li>
-                </ul>
-                <div className="social-icon d-flex align-items-center">
-                  <a href={settings.social?.facebook || '#'} aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                  <a href={settings.social?.twitter  || '#'} aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                  <a href={settings.social?.youtube  || '#'} aria-label="YouTube"><i className="fab fa-youtube"></i></a>
-                  <a href={settings.social?.linkedin || '#'} aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="offcanvas__overlay"></div>
-
-      {/* Header */}
-      <header id="header-sticky" className="header-1">
-        <div className="container-fluid">
-          <div className="mega-menu-wrapper">
-            <div className="header-main">
-              <div className="header-left">
-                <div className="logo">
-                  <a href="/" className="header-logo"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel" /></a>
-                  <a href="/" className="header-logo-2"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel" /></a>
-                </div>
-              </div>
-              <div className="mean__menu-wrapper d-none d-xl-block">
-                <div className="main-menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li className="has-dropdown menu-thumb"><a href="/">Home</a></li>
-                      <li className="has-dropdown d-xl-none"><a href="/" className="border-none">Home</a></li>
-                      <li><a href="/about">About Us</a></li>
-                      <li className="has-dropdown"><a href="/facilities">Facilities</a></li>
-                      <li><a href="/service">Service</a></li>
-                      <li className="active"><a href="/news">Blog</a></li>
-                      <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              <div className="header-right d-flex justify-content-end align-items-center">
-                <div className="call-item">
-                  <div className="icon"><i className="fa-solid fa-phone"></i></div>
-                  <h6><a href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</a></h6>
-                </div>
-                <div className="header-button"><a href="/contact" className="theme-btn">BOOK NOW</a></div>
-                <div className="header__hamburger d-xl-none my-auto">
-                  <div className="sidebar__toggle"><i className="fas fa-bars"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SharedHeader />
 
       {/* Breadcrumb */}
       <div
@@ -205,7 +120,9 @@ export default function NewsPage() {
                 {displayPosts.map((post, i) => (
                   <div key={post._id || post.id || i} className="news-card-items-4" style={{ overflow: 'hidden' }}>
                     <div className="news-image" style={{ overflow: 'hidden' }}>
-                      <img src={imgUrl(post.image, '/assets/img/home-2/news/10.jpg')} alt={post.title} loading="lazy" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <a href={post.ctaLink || `/news-details/${post.slug || post._id}`}>
+                        <img src={imgUrl(post.image, '/assets/img/home-2/news/10.jpg')} alt={post.title} loading="lazy" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      </a>
                     </div>
                     <div className="news-content">
                       <ul className="date-list">
@@ -253,12 +170,14 @@ export default function NewsPage() {
                       {displayRecent.map((p, i) => (
                         <div key={p._id || p.id || i} className="recent-items" style={{ display: 'flex', alignItems: 'flex-start', gap: 12, overflow: 'hidden' }}>
                           <div className="recent-thumb" style={{ flexShrink: 0, width: 80, height: 60, overflow: 'hidden', borderRadius: 6 }}>
+                            <a href={p.ctaLink || `/news-details/${p.slug || p._id}`} style={{ display: 'block', height: '100%' }}>
                             <img
                               src={imgUrl(p.image, `/assets/img/inner-page/news-details/post-${i + 1}.jpg`)}
                               alt={p.title}
                               loading="lazy"
                               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                             />
+                            </a>
                           </div>
                           <div className="recent-content" style={{ minWidth: 0, flex: 1 }}>
                             <h5 style={{ margin: '0 0 4px', wordBreak: 'break-word', overflow: 'hidden' }}>
@@ -284,10 +203,7 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <AminitiesSection />
-      <InstagramSlider wrapperClass="instagram-section-2 fix" />
-
-      {/* Footer */}
+      <InstagramSlider wrapperClass="instagram-section-2 fix" />{/* Footer */}
       <footer className="footer-section fix bg-cover" style={{ backgroundImage: `url('${footerBg}')` }}>
         <div className="container">
           <div className="footer-newsletter">

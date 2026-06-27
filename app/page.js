@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react'
 import { imgUrl } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
-import MobileNav from '@/app/_components/MobileNav'
+import SharedHeader from '@/app/_components/SharedHeader'
+
 
 const HERO_SLIDES = [
   { title: 'Luxury Rooms',   img: '/assets/images/rooms/NDS_5403.jpg'   },
@@ -19,8 +20,11 @@ const STATIC_OFFERS = [
 ]
 
 const STATIC_TESTIMONIALS = [
-  { _id: 't1', name: 'Rajesh Sharma', role: 'Business Executive, Delhi', rating: 5, content: "The ParkQueen Hotel exceeded my expectations in every way. The conference facilities were outstanding for my corporate meetings, and the rooms offered complete comfort after long work days. Exceptional service throughout!", image: { url: 'https://ui-avatars.com/api/?name=Rajesh+Sharma&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true' } },
-  { _id: 't2', name: 'Priya Kapoor',  role: 'Travel Blogger, Chandigarh',  rating: 5, content: "A truly luxurious experience in the heart of Rohtak! The staff's warmth and attentiveness made us feel like royalty. The dining was exceptional — a perfect blend of Indian flavours and continental delicacies.", image: { url: 'https://ui-avatars.com/api/?name=Priya+Kapoor&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true' } },
+  { _id: 'r1', name: 'Vikram Singh',  role: 'Wedding Host, Delhi NCR',     rating: 5, content: "We hosted our daughter's wedding reception at The ParkQueen Hotel and it was truly magnificent. The banquet arrangements, the food spread, and the hospitality of the staff were beyond our expectations. Our guests are still talking about it!", image: { url: 'https://ui-avatars.com/api/?name=Vikram+Singh&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true' } },
+  { _id: 'r2', name: 'Meera Gupta',  role: 'Business Traveler, Noida',    rating: 5, content: "I frequently visit Rohtak for corporate work and The ParkQueen Hotel is my go-to stay. The conference facilities are top-class, rooms are immaculately clean, and the staff is always professional and welcoming. Highly recommended!", image: { url: 'https://ui-avatars.com/api/?name=Meera+Gupta&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true' } },
+  { _id: 'r3', name: 'Arjun Mehta',  role: 'Family Guest, Faridabad',     rating: 5, content: "A perfect family holiday near Delhi Bypass, Rohtak. The rooms were spacious and spotless, the dining was delicious, and the children loved every moment. The staff treated us like family. We will definitely come back!", image: { url: 'https://ui-avatars.com/api/?name=Arjun+Mehta&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true' } },
+  { _id: 'r4', name: 'Pooja Verma',  role: 'Honeymoon Guest, Gurgaon',    rating: 5, content: "My husband and I spent our honeymoon at The ParkQueen Hotel and it was absolutely dreamy. The room décor was elegant, the Bar & Lounge was perfect for evenings, and every single staff member made us feel incredibly special.", image: { url: 'https://ui-avatars.com/api/?name=Pooja+Verma&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true' } },
+  { _id: 'r5', name: 'Rohit Kumar',  role: 'Corporate Event, Sonipat',    rating: 5, content: "Organised a seminar for 80 delegates at The ParkQueen Hotel. The conference hall setup was flawless, catering was excellent, and the event team was supremely cooperative. A truly professional hotel that delivers on every promise!", image: { url: 'https://ui-avatars.com/api/?name=Rohit+Kumar&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true' } },
 ]
 
 export default function HomePage() {
@@ -107,252 +111,143 @@ export default function HomePage() {
 
   return (
     <>
-{/* GT Back To Top Start */}
-      <button id="back-top" className="back-to-top show">
-        <i className="fa-regular fa-arrow-up"></i>
-      </button>
+      <SharedHeader />
 
-      {/* GT MouseCursor Start */}
-      <div className="mouseCursor cursor-outer"></div>
-      <div className="mouseCursor cursor-inner"></div>
-
-      {/* Offcanvas Area Start */}
-      <div className="fix-area">
-        <div className="offcanvas__info">
-          <div className="offcanvas__wrapper">
-            <div className="offcanvas__content">
-              <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                <div className="offcanvas__logo">
-                  <a href="/">
-                    <img
-                      style={{ width: '18rem' }}
-                      src="/assets/images/logo.png"
-                      alt="The ParkQueen Hotel logo"
-                    />
-                  </a>
-                </div>
-                <div className="offcanvas__close">
-                  <button>
-                    <i className="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <MobileNav />
-              {/* outer <p> changed to <div> — block elements cannot be nested inside <p> in JSX */}
-              <div className="text d-none d-xl-block">
-                <p>
-                  Nullam dignissim, ante scelerisque the is euismod fermentum odio
-                  sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean
-                  a imperdiet risus.
-                </p>
-                <p>
-                  Welcome to The ParkQueen Hotel, your trusted destination for
-                  refined luxury stays and hospitality that feels personal,
-                  polished, and effortless.
-                </p>
-                <h4 className="d-xl-block">Contact Info</h4>
-                <ul className="d-xl-block">
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon">
-                      <i className="fal fa-map-marker-alt"></i>
-                    </div>
-                    <div className="offcanvas__contact-text">
-                      <a target="_blank" href="https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana">
-                        The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak,
-                        Haryana 124001, India
-                      </a>
-                    </div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15">
-                      <i className="fal fa-envelope"></i>
-                    </div>
-                    <div className="offcanvas__contact-text">
-                      <a href="mailto:info@parkqueenhotels.com">
-                        <span className="mailto:info@parkqueenhotels.com">
-                          info@parkqueenhotels.com
-                        </span>
-                      </a>
-                    </div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15">
-                      <i className="fal fa-clock"></i>
-                    </div>
-                    <div className="offcanvas__contact-text">
-                      <a target="_blank" href="/contact">
-                        Mod-friday, 09am -05pm
-                      </a>
-                    </div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15">
-                      <i className="far fa-phone"></i>
-                    </div>
-                    <div className="offcanvas__contact-text">
-                      <a href="tel:+919088809991">+91 90888 09991</a>
-                    </div>
-                  </li>
-                </ul>
-                <div className="social-icon d-flex align-items-center">
-                  <a href="/contact">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="/contact">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="/contact">
-                    <i className="fab fa-youtube"></i>
-                  </a>
-                  <a href="/contact">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="offcanvas__overlay"></div>
-
-      {/* Header Section Start */}
-      <header id="header-sticky" className="header-1">
-        <div className="container-fluid">
-          <div className="mega-menu-wrapper">
-            <div className="header-main">
-              <div className="header-left">
-                <div className="logo">
-                  <a href="/" className="header-logo">
-                    <img
-                      style={{ width: '18rem' }}
-                      src="/assets/images/logo.png"
-                      alt="logo-img"
-                    />
-                  </a>
-                  <a href="/" className="header-logo-2">
-                    <img
-                      style={{ width: '18rem' }}
-                      src="/assets/images/logo.png"
-                      alt="logo-img"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="mean__menu-wrapper d-none d-xl-block">
-                <div className="main-menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li className="has-dropdown active menu-thumb">
-                        <a href="/"> Home </a>
-                      </li>
-                      
-                      <li>
-                        <a href="/about">About Us</a>
-                      </li>
-                      <li className="has-dropdown">
-                        <a href="/facilities"> Facilities </a>
-                      </li>
-                      <li>
-                        <a href="/service"> Service </a>
-                      </li>
-                      <li>
-                        <a href="/news"> Blog </a>
-                      </li>
-                      
-                      <li>
-                        <a href="/contact">Contact Us</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              <div className="header-right d-flex justify-content-end align-items-center">
-                <div className="call-item">
-                  <div className="icon">
-                    <i className="fa-solid fa-phone"></i>
-                  </div>
-                  <h6>
-                    <a href="tel:+919088809991">+91 9088809991</a>
-                  </h6>
-                </div>
-                <div className="header-button">
-                  <a href="/contact" className="theme-btn">
-                    BOOK NOW
-                  </a>
-                </div>
-                <div className="header__hamburger d-xl-none my-auto">
-                  <div className="sidebar__toggle">
-                    <i className="fas fa-bars"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section Start */}
-      <section
-        className="hero-section-1 hero-1 fix bg-cover jquery-ripples"
-        style={{
-          backgroundImage: `url('${imgUrl(c.hero?.backgroundImage, '/assets/images/home/12121.jpg.jpeg')}')`,
-          position: 'relative',
-        }}
-      >
-        <div
-          className="hero-overlay"
+      {/* ── Luxury Hero Section ───────────────────────────────────── */}
+      <section style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+        backgroundColor: '#0a0c1c',
+      }}>
+        {/* Hero background image — img element is more reliable than CSS background-image */}
+        <img
+          src="/assets/images/hero.png"
+          alt=""
+          aria-hidden="true"
           style={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.25))',
-            zIndex: 1,
+            position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+            width: '100%', height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center right',
+            zIndex: 0,
+            pointerEvents: 'none',
+            userSelect: 'none',
           }}
-        ></div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="hero-content">
-              <p>
-                {dyn(c.hero?.subtext, 'Indulge in a luxurious hotel stay where comfort meets style, offering world-class amenities, elegant design, and exceptional personalized service.')}
-              </p>
-              <a href="/service-details" className="theme-btn" style={{ background: '#cda434' }}>
-                view our rooms
-              </a>
-              <div className="hero-wrapper" style={{ position: 'relative', zIndex: 2 }}>
-                <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                  The ParkQueen Hotel <br />
-                  Luxury Hotel in Rohtak
-                </h1>
-                <div
-                  className="hero-box"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.08)',
-                    backdropFilter: 'blur(15px)',
-                  }}
-                >
-                  <div className="top-item">
-                    <h4>Hotel&apos;s Facilities</h4>
-                    <div className="swiper-dot-1 mt-0">
-                      <div className="dot"></div>
-                    </div>
-                  </div>
-                  <div className="swiper hero-slider">
-                    <div className="swiper-wrapper">
-                      {HERO_SLIDES.map((slide, i) => (
-                        <div key={i} className="swiper-slide">
-                          <div className="hero-item">
-                            <div className="hero-image">
-                              <img src={slide.img} alt={slide.title} />
-                            </div>
-                            <h6>{slide.title}</h6>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+        />
+
+        {/* Gradient overlay — dark on left, fades right so building shows */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(to right, rgba(10,12,28,.92) 0%, rgba(10,12,28,.72) 45%, rgba(10,12,28,.2) 100%)',
+          zIndex: 1,
+        }}></div>
+
+        {/* Hero content */}
+        <div style={{
+          position: 'relative', zIndex: 2,
+          flex: 1,
+          display: 'flex',
+          alignItems: 'center',
+          padding: '140px 6vw 100px',
+        }}>
+          <div className="wow fadeInLeft" data-wow-delay=".2s" style={{ maxWidth: 600 }}>
+
+            {/* Pre-heading */}
+            <p style={{ color: '#cda434', fontSize: 13, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', marginBottom: 14, margin: '0 0 14px' }}>
+              WELCOME TO
+            </p>
+
+            {/* Main title */}
+            <h1 style={{ color: '#fff', fontSize: 'clamp(52px, 7vw, 88px)', fontWeight: 900, lineHeight: 1, margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: 2 }}>
+              HOTEL
+            </h1>
+            <h1 style={{ color: '#cda434', fontSize: 'clamp(52px, 7vw, 88px)', fontWeight: 900, lineHeight: 1, margin: '0 0 28px', textTransform: 'uppercase', letterSpacing: 2 }}>
+              PARK QUEEN
+            </h1>
+
+            {/* Gold ornament divider */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 22 }}>
+              <div style={{ flex: '0 0 80px', height: 1, background: 'linear-gradient(to right, transparent, #cda434)' }}></div>
+              <span style={{ color: '#cda434', fontSize: 20, lineHeight: 1 }}>✦</span>
+              <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, #cda434, transparent)' }}></div>
+            </div>
+
+            {/* Taglines */}
+            <p style={{ color: 'rgba(255,255,255,.88)', fontSize: 18, margin: '0 0 10px', fontStyle: 'italic', fontWeight: 300, letterSpacing: '.5px' }}>
+              Where Luxury Meets Comfort
+            </p>
+            <p style={{ color: '#cda434', fontSize: 13, margin: '0 0 44px', letterSpacing: 3, fontWeight: 600 }}>
+              Stay &nbsp;•&nbsp; Dine &nbsp;•&nbsp; Celebrate
+            </p>
+
+            {/* CTA Button */}
+            <a href="/contact" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 10,
+              padding: '15px 34px',
+              border: '2px solid #cda434',
+              color: '#cda434',
+              fontSize: 13,
+              fontWeight: 700,
+              letterSpacing: 2,
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              borderRadius: 4,
+              transition: 'all .3s',
+              background: 'transparent',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#cda434'; e.currentTarget.style.color = '#0a0c1c' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#cda434' }}
+            >
+              <i className="fa-regular fa-calendar-check"></i>
+              BOOK YOUR STAY
+            </a>
+          </div>
+        </div>
+
+        {/* "HOTEL PARK QUEEN" watermark on the right (building area) */}
+        <div className="d-none d-lg-block" style={{
+          position: 'absolute', bottom: 90, right: '4vw', zIndex: 2,
+          color: 'rgba(255,255,255,.15)', fontSize: 'clamp(14px, 1.8vw, 22px)',
+          fontWeight: 800, letterSpacing: 6, textTransform: 'uppercase',
+        }}>
+          HOTEL PARK QUEEN
+        </div>
+
+        {/* Bottom info bar */}
+        <div style={{
+          position: 'relative', zIndex: 2,
+          background: 'rgba(10,12,28,.45)',
+          borderTop: '1px solid rgba(205,164,52,.25)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+        }}>
+          <div style={{
+            maxWidth: 1400, margin: '0 auto', padding: '0 6vw',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 0,
+          }}>
+            {[
+              { icon: 'fa-location-dot', label: 'DELHI BYPASS, ROHTAK', sub: 'HARYANA – 124001' },
+              { icon: 'fa-phone',        label: '+91 9088809991',       sub: 'CALL US ANYTIME' },
+              { icon: 'fa-envelope',     label: 'INFO@PARKQUEENHOTELS.COM', sub: 'WE REPLY PROMPTLY' },
+              { icon: 'fa-clock',        label: '24/7 FRONT DESK',     sub: "WE'RE HERE TO HELP" },
+            ].map((item, i) => (
+              <div key={i} style={{
+                padding: '16px 24px',
+                display: 'flex', alignItems: 'center', gap: 14,
+                borderRight: i < 3 ? '1px solid rgba(205,164,52,.18)' : 'none',
+              }}>
+                <i className={`fa-solid ${item.icon}`} style={{ color: '#cda434', fontSize: 20, flexShrink: 0 }}></i>
+                <div>
+                  <div style={{ color: '#fff', fontSize: 12, fontWeight: 600, letterSpacing: '1.5px', fontFamily: 'Georgia, "Times New Roman", serif' }}>{item.label}</div>
+                  <div style={{ color: 'rgba(205,164,52,.6)', fontSize: 9, letterSpacing: '2px', marginTop: 3, textTransform: 'uppercase', fontWeight: 500 }}>{item.sub}</div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -364,7 +259,7 @@ export default function HomePage() {
             <div className="row g-4">
               <div className="col-lg-6">
                 <div className="about-image">
-                  <img src={imgUrl(c.about?.image, '/assets/images/home/NDS_5148.jpg')} alt="img" />
+                  <a href="/about"><img src={imgUrl(c.about?.image, '/assets/images/home/NDS_5148.jpg')} alt="The ParkQueen Hotel" /></a>
                 </div>
               </div>
               <div className="col-lg-6">
@@ -384,21 +279,21 @@ export default function HomePage() {
                     <ul className="list">
                       <li>
                         <i className="fa-solid fa-circle-chevron-right"></i>
-                        Easy and secure online booking
+                        <a href="/booking" style={{ textDecoration: 'none', color: 'inherit' }}>Easy and secure online booking</a>
                       </li>
                       <li>
                         <i className="fa-solid fa-circle-chevron-right"></i>
-                        Exclusive discounts and offers
+                        <a href="/booking" style={{ textDecoration: 'none', color: 'inherit' }}>Exclusive discounts and offers</a>
                       </li>
                     </ul>
                     <ul className="list">
                       <li>
                         <i className="fa-solid fa-circle-chevron-right"></i>
-                        24/7 customer support
+                        <a href="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>24/7 customer support</a>
                       </li>
                       <li>
                         <i className="fa-solid fa-circle-chevron-right"></i>
-                        Flexible cancellation policies
+                        <a href="/booking" style={{ textDecoration: 'none', color: 'inherit' }}>Flexible cancellation policies</a>
                       </li>
                     </ul>
                   </div>
@@ -460,69 +355,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Room Section Start */}
-      <section className="room-section section-padding fix">
-        <div className="bg-image">
-          <img src={imgUrl(c.roomsBg, '/assets/images/dining/NDS_5117.jpg')} alt="img" />
-        </div>
-        <div className="container">
-          <div className="section-title-area">
-            <div className="section-title mb-0">
-              <span className="sub-title text-white wow fadeInUp">
-                Choose Your Perfect Stay
-              </span>
-              <h2 className="text-white wow fadeInUp" data-wow-delay=".3s">
-                {dyn(c.roomsHeading, 'Our Rooms / Accommodation')}
-              </h2>
-              <p className="mt-3 text-white wow fadeInUp" data-wow-delay=".3s">
-                {dyn(c.roomsSubtext, 'At The ParkQueen Hotel, we present exquisite rooms and suites crafted for modern luxury in Rohtak.')}
-              </p>
-            </div>
-            <div className="array-buttons wow fadeInUp" data-wow-delay=".5s">
-              <button className="array-prev">
-                <i className="fa-solid fa-chevron-left"></i>
-              </button>
-              <button className="array-next">
-                <i className="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="swiper room-slider">
-          <div className="swiper-wrapper">
-            {(c.rooms || [
-              { id: 1, image: '/assets/images/rooms/ROOM2.jpg', category: 'Executive Room', name: 'Executive Room', price: '₹5,500 + GST' },
-              { id: 2, image: '/assets/images/rooms/newroom.jpeg', category: 'Superior Room', name: 'Superior Room', price: '₹6,000 + GST' },
-              { id: 3, image: '/assets/images/rooms/ROOM3.jpg', category: 'Queen Suite', name: 'Queen Suite', price: '₹6,500 + GST' },
-              { id: 4, image: '/assets/images/rooms/ROOM4.jpg', category: 'Presidential Suite', name: 'Presidential Suite', price: '₹7,499 + GST' },
-              { id: 5, image: '/assets/images/rooms/ROOM5.jpg', category: 'Executive Room', name: 'Executive Room', price: '₹5,500 + GST' },
-            ]).map(room => (
-              <div key={room.id} className="swiper-slide">
-                <div className="room-box-item">
-                  <div className="room-image">
-                    <img src={imgUrl(room.image, '')} alt={room.name || 'room'} />
-                    <img src={imgUrl(room.image, '')} alt={room.name || 'room'} />
-                    <span>{room.price}</span>
-                  </div>
-                  <div className="content-item">
-                    <div className="room-content">
-                      <h6>{room.category}</h6>
-                      <h4><a href="/service-details">{room.name}</a></h4>
-                      <ul className="list">
-                        <li><i className="fa-solid fa-bed-front"></i> 1500 SQ.FT/Rooms</li>
-                        <li><i className="fa-solid fa-user"></i> 02 Guests</li>
-                      </ul>
-                    </div>
-                    <a href="/service-details" className="theme-btn">
-                      Book Now <i className="fa-solid fa-chevron-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Feature Section Start */}
       <section className="feature-section section-padding fix">
@@ -624,127 +456,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Aminities Section Start */}
-      <div className="aminities-section">
+
+      {/* ── Hotel Description Section ──────────────────────────────── */}
+      <section style={{ background: '#fff', padding: '80px 0' }}>
         <div className="container">
-          <div className="aminities-wrapper">
-            <div className="row">
-              <div className="col-xl-12 sticky-style">
-                <div className="aminities-items">
-                  <div className="aminities-image">
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5117.jpg" alt="img" />
-                    </a>
-                  </div>
+          <div className="row g-5 align-items-center">
+            <div className="col-lg-5 wow fadeInLeft">
+              <div style={{ position: 'relative', borderRadius: 14, overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,.12)' }}>
+                <img src="/assets/images/home/NDS_5148.jpg" alt="The ParkQueen Hotel" style={{ width: '100%', height: 380, objectFit: 'cover', display: 'block' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(26,28,46,.8))', padding: '24px 20px 16px' }}>
+                  <p style={{ color: '#cda434', fontSize: 11, fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase', margin: 0 }}>Est. Rohtak, Haryana</p>
                 </div>
               </div>
-              <div className="col-xl-12 sticky-style">
-                <div className="aminities-items">
-                  <div className="aminities-image">
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_5151.jpg" alt="img" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-12 sticky-style">
-                <div className="aminities-items mb-0">
-                  <div className="aminities-image">
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
-                    </a>
-                    <a href="/facilities">
-                      <img src="/assets/images/dining/NDS_4994.jpg" alt="img" />
-                    </a>
-                    <div className="content-box">
-                      <div className="shape">
-                        <img src="/assets/img/home-1/aminiti/bg.png" alt="img" />
-                      </div>
-                      <h3>
-                        <a href="/facilities">many more&apos;s</a>
-                      </h3>
-                      <a href="/facilities" className="view-btn">
-                        View All <i className="fa-solid fa-arrow-up-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div className="col-lg-7 wow fadeInRight">
+              <span style={{ color: '#cda434', fontSize: 12, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', display: 'block', marginBottom: 14 }}>About The Hotel</span>
+              <h2 style={{ color: '#1a1c2e', fontSize: 30, fontWeight: 700, marginBottom: 8, lineHeight: 1.3 }}>Welcome to The ParkQueen Hotel &amp; Resort&apos;s Rohtak</h2>
+              <div style={{ width: 56, height: 2, background: '#cda434', marginBottom: 20 }}></div>
+              <p style={{ color: '#4b5563', lineHeight: 1.9, fontSize: 14, marginBottom: 14 }}>
+                When it comes to hotels in Rohtak, ParkQueen is the best of its kind. Being style-plus-home that offers stunning interiors by its designers, service that makes you feel at home. Everything about us is to complement our guests. Executive, Superior &amp; Queen Suite. The hotel is furnished with an enormous plethora luxurious designs that offer five-star luxury amenities. Banquets facilities are colour to your government strategy, city's new exciting restaurant &amp; bar.
+              </p>
+              <p style={{ color: '#4b5563', lineHeight: 1.9, fontSize: 14, marginBottom: 24 }}>
+                Synonymous with the words comfort, grandeur, and excellence, we at ParkQueen provide unmatched and heartfelt services round the clock to ensure that your needs are met at all timesrm personalized, professional guest services and genuine hospitality.
+              </p>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a href="/about" className="theme-btn" style={{ padding: '11px 28px', fontSize: 13 }}>KNOW MORE</a>
+                <a href="/contact" style={{ padding: '11px 28px', fontSize: 13, border: '2px solid #1a1c2e', borderRadius: 6, color: '#1a1c2e', textDecoration: 'none', fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', transition: 'all .2s' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#1a1c2e'; e.currentTarget.style.color = '#fff' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#1a1c2e' }}>
+                  CONTACT US
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Service-Offer Section Start */}
-      <div className="service-offer-section section-padding fix">
+      {/* ── Room Amenities ─────────────────────────────────────────── */}
+      <section style={{ background: '#f4f6f9', padding: '0 0 72px' }}>
+        <div style={{ background: '#cda434', padding: '18px 0', marginBottom: 48, textAlign: 'center' }}>
+          <h2 style={{ margin: 0, color: '#1a1c2e', fontSize: 22, fontWeight: 800, letterSpacing: 4, textTransform: 'uppercase' }}>ROOM AMENITIES</h2>
+        </div>
         <div className="container">
-          <div className="section-title text-center">
-            <span className="sub-title wow fadeInUp">{dyn(c.offersSubtitle, 'our special offer')}</span>
-            <h2 className="wow fadeInUp" data-wow-delay=".3s">
-              {dyn(c.offersHeading, "Our Latest Special Offer's")}
-            </h2>
-          </div>
-          <div className="service-wrapper">
-            {activeOffers.map((offer, i) => {
-              const mainSrc = imgUrl(offer.image, null)
-              const cardSrc = imgUrl(offer.cardImage, null)
-              return (
-                <div
-                  key={offer._id || offer.id || i}
-                  className={`service-main-item${i === 2 ? ' active' : ''}`}
-                  onMouseEnter={e => {
-                    document.querySelectorAll('.service-main-item').forEach(el => el.classList.remove('active'))
-                    e.currentTarget.classList.add('active')
-                  }}
-                >
-                  <div className="service-item">
-                    <div className="service-image">
-                      {mainSrc && <img src={mainSrc} alt="img" />}
-                    </div>
-                    <div className="service-content">
-                      <h3><a href="/service">{offer.title}</a></h3>
-                      <a href="/service" className="btn">view details</a>
-                    </div>
-                  </div>
-                  <div className="service-card-item">
-                    <div className="services-image">
-                      {cardSrc && <img src={cardSrc} alt="img" />}
-                      <div className="content">
-                        <h3><a href="/service">{offer.cardTitle || offer.description || offer.title}</a></h3>
-                        <a href="/service" className="views-btn">view details</a>
-                      </div>
-                    </div>
-                  </div>
+          <div className="row g-3">
+            {[
+              ['fa-wifi','Enjoy Free Wi-Fi'],['fa-wind','Air Condition'],['fa-tv','LCD In All Rooms'],['fa-snowflake','Mini Refrigerator'],
+              ['fa-shower','Running Hot & Cold Water'],['fa-phone-volume','Intercom'],['fa-mug-hot','Tea / Coffee Maker'],['fa-map-location-dot','Travel Desk'],
+              ['fa-square-parking','Vallet Parking'],['fa-credit-card','All Major Cards Accepted'],['fa-shirt','Laundry & Dry Cleaning'],['fa-bolt','24 Hours Power Back Up'],
+              ['fa-headphones','Sound Proofing & Acoustics'],['fa-elevator','Lift'],['fa-taxi','Taxi On Call'],['fa-user-doctor','Doctor On Call'],
+            ].map(([icon, label], i) => (
+              <div key={i} className="col-6 col-md-4 col-lg-3">
+                <div className="wow fadeInUp" data-wow-delay={`.${(i%4)+1}s`} style={{
+                  background: '#fff', borderRadius: 8, padding: '20px 14px', textAlign: 'center',
+                  boxShadow: '0 1px 6px rgba(0,0,0,.06)', borderBottom: '2px solid transparent',
+                  transition: 'border-color .2s, transform .2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = '#cda434'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.transform = 'none' }}>
+                  <i className={`fa-solid ${icon}`} style={{ fontSize: 30, color: '#1a1c2e', marginBottom: 10, display: 'block' }}></i>
+                  <p style={{ margin: 0, fontSize: 11, fontWeight: 700, color: '#374151', textTransform: 'uppercase', letterSpacing: '.5px', lineHeight: 1.4 }}>{label}</p>
                 </div>
-              )
-            })}
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Hotel-Dining Section Start */}
       <section className="hotel-dining-section fix">
@@ -770,7 +546,7 @@ export default function HomePage() {
                         {(c.diningImages || []).map((img, i) => (
                           <div key={i} className="swiper-slide">
                             <div className="dining-image">
-                              <img src={imgUrl(img, '')} alt="img" />
+                              <a href="/dining"><img src={imgUrl(img, '')} alt="Hotel Dining" /></a>
                             </div>
                           </div>
                         ))}
@@ -796,7 +572,7 @@ export default function HomePage() {
                     {(c.hotelImages || []).map((img, i) => (
                       <div key={i} className="swiper-slide">
                         <div className="hotel-image">
-                          <img src={imgUrl(img, '')} alt="img" />
+                          <a href="/about"><img src={imgUrl(img, '')} alt="The ParkQueen Hotel" /></a>
                         </div>
                       </div>
                     ))}
@@ -889,140 +665,103 @@ export default function HomePage() {
       {/* Instagram Section Start */}
       <InstagramSlider wrapperClass="instagram-section fix" />
 
-      {/* News Section Start */}
-      <section className="news-section section-padding fix">
+      {/* ── Why Book With Us ─────────────────────────────────────── */}
+      <section style={{ background: '#faf9f7', padding: '90px 0' }}>
         <div className="container">
-          <div className="section-title-area">
-            <div className="section-title mb-0">
-              <span className="sub-title wow fadeInUp">
-                {dyn(c.newsSubtitle, 'Choose Your Perfect Stay')}
-              </span>
-              <h2 className="wow fadeInUp" data-wow-delay=".3s">
-                {dyn(c.newsHeading, 'Our Latest News Feed')}
-              </h2>
-            </div>
-            <a href="/news" className="theme-btn">VIEW all news</a>
+          <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <span style={{ color: '#cda434', fontSize: 12, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', display: 'block', marginBottom: 10 }}>Our Promise</span>
+            <h2 className="wow fadeInUp" data-wow-delay=".2s" style={{ color: '#1a1c2e', fontSize: 36, fontWeight: 700, margin: 0 }}>WHY BOOK WITH US?</h2>
+            <div style={{ width: 64, height: 2, background: '#cda434', margin: '16px auto 0' }}></div>
           </div>
-          <div className="news-wrapper">
-            <div className="row">
-              <div className="col-lg-6">
-                <ul className="news-list">
-                  {(c.newsItems || [
-                    { id: 1, date: 'April 12, 2025', category: 'Tips & Enjoy', title: "Toast to the Good Life Our Sommelier's Picks" },
-                    { id: 2, date: 'April 12, 2025', category: 'Tips & Enjoy', title: "Toast to the Good Life Our Sommelier's Picks" },
-                    { id: 3, date: 'April 12, 2025', category: 'Tips & Enjoy', title: "Toast to the Good Life Our Sommelier's Picks" },
-                    { id: 4, date: 'April 12, 2025', category: 'Tips & Enjoy', title: "Toast to the Good Life Our Sommelier's Picks" },
-                  ]).map((item, i) => (
-                    <li
-                      key={item.id || i}
-                      className="news-service"
-                      onMouseEnter={() => {
-                        document.querySelectorAll('.news-img-group li').forEach(el => el.classList.remove('active'))
-                        const target = document.querySelector(`.news-img-group li:nth-child(${i + 1})`)
-                        if (target) target.classList.add('active')
-                      }}
-                    >
-                      <div className="tag">
-                        <span>{item.date}</span>
-                        <span className="style-2">{item.category}</span>
-                      </div>
-                      <div className="news-content">
-                        <h3><a href="/news">{item.title}</a></h3>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+          <div className="row g-4">
+            {[
+              { icon: 'fa-utensils',     title: 'Fresh & Delectable Meals',  text: 'Our ParkQueen restaurant serves all three meals daily — a rich spread of North Indian delicacies, continental fare, and special seasonal menus crafted by our expert chefs.',           delay: '.2s' },
+              { icon: 'fa-wifi',         title: 'Stay Connected',             text: 'Stay updated with our premium high-speed Wi-Fi available throughout the hotel — in rooms, lobbies, dining areas, and banquet halls — keeping you connected at all times.',               delay: '.3s' },
+              { icon: 'fa-martini-glass-citrus', title: 'Feel Your Best',    text: 'Unwind at our elegant Bar & Lounge or enjoy a refreshing drink from our in-room service available round the clock. Comfort and leisure are available 24 hours a day.',                 delay: '.4s' },
+              { icon: 'fa-bed',          title: 'Better Sleep Quality',       text: 'Our premium bedding, soundproofed rooms, and carefully curated room amenities ensure a tranquil, restful night — so you wake up refreshed and ready for the day ahead.',               delay: '.5s' },
+            ].map((item, i) => (
+              <div key={i} className="col-md-6 col-lg-3">
+                <div className="wow fadeInUp" data-wow-delay={item.delay} style={{
+                  background: '#fff',
+                  borderRadius: 12,
+                  padding: '36px 28px',
+                  height: '100%',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 4px 24px rgba(0,0,0,.06)',
+                  transition: 'transform .3s, box-shadow .3s',
+                  borderBottom: '3px solid #cda434',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,.12)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,.06)' }}
+                >
+                  <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'linear-gradient(135deg,#1a1c2e,#2d3056)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
+                    <i className={`fa-solid ${item.icon}`} style={{ color: '#cda434', fontSize: 26 }}></i>
+                  </div>
+                  <h4 style={{ color: '#1a1c2e', fontSize: 17, fontWeight: 700, marginBottom: 12 }}>{item.title}</h4>
+                  <p style={{ color: '#6b7280', lineHeight: 1.8, fontSize: 14, margin: 0 }}>{item.text}</p>
+                  <div style={{ position: 'absolute', bottom: 0, right: 0, width: 80, height: 80, borderRadius: '80px 0 0 0', background: 'rgba(205,164,52,0.06)' }}></div>
+                </div>
               </div>
-              <div className="col-lg-6">
-                <ul className="news-img-group">
-                  {(c.newsImages || [
-                    '/assets/img/home-1/news/news-1.jpg',
-                    '/assets/img/home-1/news/news-2.jpg',
-                    '/assets/img/home-1/news/news-3.jpg',
-                    '/assets/img/home-1/news/news-4.jpg',
-                  ]).map((img, i) => (
-                    <li key={i} className={i === 0 ? 'active' : ''}>
-                      <div className="news-img">
-                        <img src={imgUrl(img, `/assets/img/home-1/news/news-${i + 1}.jpg`)} alt="img" />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Brand Section Start */}
-      <div className="brand-section section-padding fix section-bg">
+      {/* ── Explore Rooms ─────────────────────────────────────────── */}
+      <section style={{ background: '#fff', padding: '90px 0' }}>
         <div className="container">
-          <div className="swiper brand-slider">
-            <div className="swiper-wrapper">
-              <div className="swiper-slide">
-                <div className="brand-item">
-                  <span className="brand-three-active-media">
-                    <img src="/assets/img/home-1/brand/01.png" alt="thumb" />
-                  </span>
-                  <span className="brand-three-hover-media">
-                    <img src="/assets/img/home-1/brand/01.png" alt="thumb" />
-                  </span>
+          <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <span style={{ color: '#cda434', fontSize: 12, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', display: 'block', marginBottom: 10 }}>Accommodation</span>
+            <h2 className="wow fadeInUp" data-wow-delay=".2s" style={{ color: '#1a1c2e', fontSize: 36, fontWeight: 700, margin: 0 }}>EXPLORE OUR ROOMS</h2>
+            <div style={{ width: 64, height: 2, background: '#cda434', margin: '16px auto 0' }}></div>
+          </div>
+          <div className="row g-4">
+            {[
+              { name: 'Executive Room',    count: 25, single: '₹5,000', double: '₹5,500', img: '/assets/images/rooms/ROOM2.jpg' },
+              { name: 'Superior Room',     count: 6,  single: '₹5,000', double: '₹6,000', img: '/assets/images/rooms/newroom.jpeg' },
+              { name: 'Queen Suite',       count: 6,  single: '₹5,500', double: '₹6,500', img: '/assets/images/rooms/ROOM3.jpg' },
+              { name: 'Presidential Suite',count: 1,  single: '₹6,999', double: '₹7,499', img: '/assets/images/rooms/ROOM4.jpg' },
+            ].map((room, i) => (
+              <div key={i} className="col-md-6 col-lg-3">
+                <div className="wow fadeInUp" data-wow-delay={`.${i+2}s`} style={{ borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,.08)', height: '100%', background: '#fff' }}>
+                  <div style={{ position: 'relative', overflow: 'hidden', height: 200 }}>
+                    <a href="/rooms" style={{ display: 'block', height: '100%' }}>
+                      <img src={room.img} alt={room.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .5s' }}
+                        onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
+                        onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                      />
+                    </a>
+                    <div style={{ position: 'absolute', top: 12, right: 12, background: '#cda434', color: '#1a1c2e', fontSize: 11, fontWeight: 700, padding: '4px 10px', borderRadius: 20, letterSpacing: 1 }}>
+                      {room.count} ROOMS
+                    </div>
+                  </div>
+                  <div style={{ padding: '20px 22px' }}>
+                    <h4 style={{ color: '#1a1c2e', fontSize: 16, fontWeight: 700, marginBottom: 10 }}>{room.name}</h4>
+                    <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+                      <div style={{ flex: 1, background: '#f8f9fa', borderRadius: 8, padding: '8px 10px', textAlign: 'center' }}>
+                        <div style={{ color: '#9ca3af', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', marginBottom: 2 }}>Single</div>
+                        <div style={{ color: '#1a1c2e', fontSize: 14, fontWeight: 700 }}>{room.single}</div>
+                      </div>
+                      <div style={{ flex: 1, background: '#f8f9fa', borderRadius: 8, padding: '8px 10px', textAlign: 'center' }}>
+                        <div style={{ color: '#9ca3af', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', marginBottom: 2 }}>Double</div>
+                        <div style={{ color: '#1a1c2e', fontSize: 14, fontWeight: 700 }}>{room.double}</div>
+                      </div>
+                    </div>
+                    <p style={{ color: '#9ca3af', fontSize: 11, margin: '0 0 14px' }}>+ Taxes applicable &nbsp;|&nbsp; Includes breakfast</p>
+                    <a href="/rooms" className="theme-btn" style={{ display: 'block', textAlign: 'center', padding: '10px', fontSize: 13 }}>VIEW DETAILS</a>
+                  </div>
                 </div>
               </div>
-              <div className="swiper-slide">
-                <div className="brand-item">
-                  <span className="brand-three-active-media">
-                    <img src="/assets/img/home-1/brand/02.png" alt="thumb" />
-                  </span>
-                  <span className="brand-three-hover-media">
-                    <img src="/assets/img/home-1/brand/02.png" alt="thumb" />
-                  </span>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="brand-item">
-                  <span className="brand-three-active-media">
-                    <img src="/assets/img/home-1/brand/03.png" alt="thumb" />
-                  </span>
-                  <span className="brand-three-hover-media">
-                    <img src="/assets/img/home-1/brand/03.png" alt="thumb" />
-                  </span>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="brand-item">
-                  <span className="brand-three-active-media">
-                    <img src="/assets/img/home-1/brand/04.png" alt="thumb" />
-                  </span>
-                  <span className="brand-three-hover-media">
-                    <img src="/assets/img/home-1/brand/04.png" alt="thumb" />
-                  </span>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="brand-item">
-                  <span className="brand-three-active-media">
-                    <img src="/assets/img/home-1/brand/05.png" alt="thumb" />
-                  </span>
-                  <span className="brand-three-hover-media">
-                    <img src="/assets/img/home-1/brand/05.png" alt="thumb" />
-                  </span>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="brand-item">
-                  <span className="brand-three-active-media">
-                    <img src="/assets/img/home-1/brand/06.png" alt="thumb" />
-                  </span>
-                  <span className="brand-three-hover-media">
-                    <img src="/assets/img/home-1/brand/06.png" alt="thumb" />
-                  </span>
-                </div>
-              </div>
-            </div>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 40 }}>
+            <p style={{ color: '#6b7280', fontSize: 13, margin: '0 0 8px' }}>* Additional GST applicable as per Government norms. Extra bed charges apply for additional guests.</p>
+            <p style={{ color: '#6b7280', fontSize: 13, margin: 0 }}>Children below 5 years: Free &nbsp;|&nbsp; 5-14 years: ₹1,500 + Taxes &nbsp;|&nbsp; Above 14 years: ₹1,800 + Taxes</p>
           </div>
         </div>
-      </div>
+      </section>
+
 
       {/* Footer Section Start */}
       <footer
@@ -1125,8 +864,7 @@ export default function HomePage() {
                   <ul className="contact-item">
                     <li>
                       <i className="fa-solid fa-location-dot"></i>
-                      The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak,
-                      Haryana 124001, India
+                      The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India
                     </li>
                     <li className="style-2">
                       <i className="fa-solid fa-envelope"></i>

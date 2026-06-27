@@ -1,12 +1,12 @@
-﻿'use client'
+'use client'
 import { useState, useEffect } from 'react'
 import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
-import AminitiesSection from '@/app/_components/AminitiesSection'
-import MobileNav from '@/app/_components/MobileNav'
+import SharedHeader from '@/app/_components/SharedHeader'
+
 
 const STATIC_FACILITIES = [
-  { _id: 'f1', image: { url: '/assets/images/dining/NDS_5117.jpg'  }, icon: 'fa-utensils',           title: 'Restaurant & Dining', text: 'Savor exceptional cuisine crafted by our chefs — from traditional Indian flavours to continental delights.' },
+  { _id: 'f1', image: { url: '/assets/images/dining/NDS_5117.jpg'  }, icon: 'fa-utensils',           title: 'Restaurant & Dining', text: 'Savor exceptional cuisine crafted by our chefs ? from traditional Indian flavours to continental delights.' },
   { _id: 'f2', image: { url: '/assets/images/dining/NDS_5151.jpg'  }, icon: 'fa-briefcase',           title: 'Business Centre',    text: 'Fully equipped business centre with high-speed internet, printing, and support services for corporate guests.' },
   { _id: 'f3', image: { url: '/assets/images/dining/NDS_4994.jpg'  }, icon: 'fa-champagne-glasses',   title: 'Banquets & Events',  text: 'Host your weddings, corporate events, and celebrations in our beautifully appointed banquet halls.' },
   { _id: 'f4', image: { url: '/assets/images/home/NDS_5344.jpg'    }, icon: 'fa-presentation-screen', title: 'Conference Hall',    text: 'State-of-the-art conference and meeting facilities for corporate events and business gatherings.' },
@@ -45,124 +45,7 @@ export default function FacilitiesPage() {
 
   return (
     <>
-      {/* GT Back To Top Start */}
-      <button id="back-top" className="back-to-top show">
-        <i className="fa-regular fa-arrow-up"></i>
-      </button>
-      <div className="mouseCursor cursor-outer"></div>
-      <div className="mouseCursor cursor-inner"></div>
-
-      {/* Offcanvas Area Start */}
-      <div className="fix-area">
-        <div className="offcanvas__info">
-          <div className="offcanvas__wrapper">
-            <div className="offcanvas__content">
-              <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                <div className="offcanvas__logo">
-                  <a href="/">
-                    <img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel logo" />
-                  </a>
-                </div>
-                <div className="offcanvas__close">
-                  <button><i className="fas fa-times"></i></button>
-                </div>
-              </div>
-              <MobileNav />
-              <div className="text d-none d-xl-block">
-                <p>Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.</p>
-                <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
-                <h4 className="d-xl-block">Contact Info</h4>
-                <ul className="d-xl-block">
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon"><i className="fal fa-map-marker-alt"></i></div>
-                    <div className="offcanvas__contact-text"><a target="_blank" href="https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana">The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="fal fa-envelope"></i></div>
-                    <div className="offcanvas__contact-text"><a href="mailto:info@parkqueenhotels.com"><span className="mailto:info@parkqueenhotels.com">info@parkqueenhotels.com</span></a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="fal fa-clock"></i></div>
-                    <div className="offcanvas__contact-text"><a target="_blank" href="/contact">Mon-Friday, 09am - 05pm</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="far fa-phone"></i></div>
-                    <div className="offcanvas__contact-text"><a href="tel:+919088809991">+91 90888 09991</a></div>
-                  </li>
-                </ul>
-                <div className="social-icon d-flex align-items-center">
-                  <a href="/contact"><i className="fab fa-facebook-f"></i></a>
-                  <a href="/contact"><i className="fab fa-twitter"></i></a>
-                  <a href="/contact"><i className="fab fa-youtube"></i></a>
-                  <a href="/contact"><i className="fab fa-linkedin-in"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="offcanvas__overlay"></div>
-
-      {/* Header Section Start */}
-      <header id="header-sticky" className="header-1">
-        <div className="container-fluid">
-          <div className="mega-menu-wrapper">
-            <div className="header-main">
-              <div className="header-left">
-                <div className="logo">
-                  <a href="/" className="header-logo">
-                    <img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="logo-img" />
-                  </a>
-                  <a href="/" className="header-logo-2">
-                    <img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="logo-img" />
-                  </a>
-                </div>
-              </div>
-              <div className="mean__menu-wrapper d-none d-xl-block">
-                <div className="main-menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li className="has-dropdown menu-thumb">
-                        <a href="/"> Home </a>
-                      </li>
-                      <li className="has-dropdown d-xl-none">
-                        <a href="/" className="border-none"> Home </a>
-                      </li>
-                      <li>
-                        <a href="/about">About Us</a>
-                      </li>
-                      <li className="has-dropdown active">
-                        <a href="/facilities"> Facilities </a>
-                      </li>
-                      <li>
-                        <a href="/service"> Service </a>
-                      </li>
-                      <li>
-                        <a href="/news"> Blog </a>
-                      </li>
-                      <li>
-                        <a href="/contact">Contact Us</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              <div className="header-right d-flex justify-content-end align-items-center">
-                <div className="call-item">
-                  <div className="icon"><i className="fa-solid fa-phone"></i></div>
-                  <h6><a href="tel:+919088809991">+91 9088809991</a></h6>
-                </div>
-                <div className="header-button">
-                  <a href="/contact" className="theme-btn">BOOK NOW</a>
-                </div>
-                <div className="header__hamburger d-xl-none my-auto">
-                  <div className="sidebar__toggle"><i className="fas fa-bars"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SharedHeader />
 
       {/* Breadcrumb Wrapper Start */}
       <div
@@ -197,8 +80,8 @@ export default function FacilitiesPage() {
                 >
                   <div className="hotel-facilities-items">
                     <div className="facilities-image">
-                      <img src={imgSrc} alt="img" />
-                      <img src={imgSrc} alt="img" />
+                      <a href="/facilities"><img src={imgSrc} alt={f.title} /></a>
+                      <a href="/facilities"><img src={imgSrc} alt={f.title} /></a>
                     </div>
                     <div className="facilities-content">
                       <div className="icon">
@@ -214,13 +97,9 @@ export default function FacilitiesPage() {
           </div>
         </div>
       </section>
-      {/* Aminities Section */}
-      <AminitiesSection />
 
       {/* Instagram Section */}
-      <InstagramSlider wrapperClass="instagram-section-2 fix" />
-
-      {/* Footer Section Start */}
+      <InstagramSlider wrapperClass="instagram-section-2 fix" />{/* Footer Section Start */}
       <footer
         className="footer-section fix bg-cover"
         style={{
@@ -275,7 +154,7 @@ export default function FacilitiesPage() {
                 <div className="single-footer-widget">
                   <div className="widget-title"><h5>Contact Us</h5></div>
                   <ul className="contact-item">
-                    <li><i className="fa-solid fa-location-dot"></i> The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India</li>
+                    <li><i className="fa-solid fa-location-dot"></i> The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India</li>
                     <li className="style-2"><i className="fa-solid fa-envelope"></i><a href="mailto:info@parkqueenhotels.com">info@parkqueenhotels.com</a></li>
                     <li className="style-2"><i className="fa-solid fa-phone"></i><a href="tel:+919088809991">+91 9088809991</a></li>
                   </ul>

@@ -1,106 +1,12 @@
-﻿'use client'
+'use client'
 import InstagramSlider from '@/app/_components/InstagramSlider'
-import AminitiesSection from '@/app/_components/AminitiesSection'
-import MobileNav from '@/app/_components/MobileNav'
+import SharedHeader from '@/app/_components/SharedHeader'
+
 
 export default function NewsDetailsPage() {
   return (
     <>
-      <button id="back-top" className="back-to-top show">
-        <i className="fa-regular fa-arrow-up"></i>
-      </button>
-      <div className="mouseCursor cursor-outer"></div>
-      <div className="mouseCursor cursor-inner"></div>
-
-      {/* Offcanvas Area Start */}
-      <div className="fix-area">
-        <div className="offcanvas__info">
-          <div className="offcanvas__wrapper">
-            <div className="offcanvas__content">
-              <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                <div className="offcanvas__logo">
-                  <a href="/"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel logo" /></a>
-                </div>
-                <div className="offcanvas__close"><button><i className="fas fa-times"></i></button></div>
-              </div>
-              <MobileNav />
-              <div className="text d-none d-xl-block">
-                <p>Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.</p>
-                <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
-                <h4 className="d-xl-block">Contact Info</h4>
-                <ul className="d-xl-block">
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon"><i className="fal fa-map-marker-alt"></i></div>
-                    <div className="offcanvas__contact-text"><a target="_blank" href="https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana">The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="fal fa-envelope"></i></div>
-                    <div className="offcanvas__contact-text"><a href="mailto:info@parkqueenhotels.com"><span className="mailto:info@parkqueenhotels.com">info@parkqueenhotels.com</span></a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="fal fa-clock"></i></div>
-                    <div className="offcanvas__contact-text"><a target="_blank" href="/contact">Mon-Friday, 09am - 05pm</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="far fa-phone"></i></div>
-                    <div className="offcanvas__contact-text"><a href="tel:+919088809991">+91 90888 09991</a></div>
-                  </li>
-                </ul>
-                <div className="social-icon d-flex align-items-center">
-                  <a href="/contact"><i className="fab fa-facebook-f"></i></a>
-                  <a href="/contact"><i className="fab fa-twitter"></i></a>
-                  <a href="/contact"><i className="fab fa-youtube"></i></a>
-                  <a href="/contact"><i className="fab fa-linkedin-in"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="offcanvas__overlay"></div>
-      {/* Offcanvas Area End */}
-
-      {/* Header Start */}
-      <header id="header-sticky" className="header-1">
-        <div className="container-fluid">
-          <div className="mega-menu-wrapper">
-            <div className="header-main">
-              <div className="header-left">
-                <div className="logo">
-                  <a href="/" className="header-logo"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="logo-img" /></a>
-                  <a href="/" className="header-logo-2"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="logo-img" /></a>
-                </div>
-              </div>
-              <div className="mean__menu-wrapper d-none d-xl-block">
-                <div className="main-menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li className="has-dropdown menu-thumb"><a href="/"> Home </a></li>
-                      <li className="has-dropdown d-xl-none"><a href="/" className="border-none"> Home </a></li>
-                      <li><a href="/about">About Us</a></li>
-                      <li className="has-dropdown"><a href="/facilities"> Facilities </a></li>
-                      <li><a href="/service"> Service </a></li>
-                      <li className="active"><a href="/news"> Blog </a></li>
-                      <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              <div className="header-right d-flex justify-content-end align-items-center">
-                <div className="call-item">
-                  <div className="icon"><i className="fa-solid fa-phone"></i></div>
-                  <h6><a href="tel:+919088809991">+91 9088809991</a></h6>
-                </div>
-                <div className="header-button"><a href="/contact" className="theme-btn">BOOK NOW</a></div>
-                <div className="header__hamburger d-xl-none my-auto">
-                  <div className="sidebar__toggle"><i className="fas fa-bars"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      {/* Header End */}
+      <SharedHeader />
 
       {/* Breadcrumb Start */}
       <div
@@ -140,15 +46,15 @@ export default function NewsDetailsPage() {
                   <h4 className="news-title">02. Business &amp; Leisure Blend</h4>
                   <p>Modern travelers seek fine dining, business facilities, and comfortable amenities that keep them productive and refreshed during their stay.</p>
                   <h4 className="news-title">03. Experience-Driven Travel</h4>
-                  <p>Guests want more than a room — they want local cultural experiences, curated tours, and unforgettable moments that money can&apos;t buy.</p>
+                  <p>Guests want more than a room ? they want local cultural experiences, curated tours, and unforgettable moments that money can&apos;t buy.</p>
                   <h4 className="news-title">04. Boutique &amp; Bespoke Properties</h4>
                   <p>Intimate hotels with distinct character and personalized attention are increasingly preferred over large chain properties.</p>
                   <h4 className="news-title">05. Seamless Digital Booking &amp; Smart Technology</h4>
                   <p>Mobile check-in, smart room controls, and instant booking confirmations define the modern luxury hotel experience.</p>
                   <h4 className="news-title">06. Culinary Exploration</h4>
-                  <p>Hotel dining has evolved into a destination in itself — guests now seek signature restaurants, chef&apos;s tables, and local flavor pairings.</p>
+                  <p>Hotel dining has evolved into a destination in itself ? guests now seek signature restaurants, chef&apos;s tables, and local flavor pairings.</p>
                   <h4 className="news-title">07. Sustainable Luxury</h4>
-                  <p>Eco-conscious travelers expect hotels to demonstrate responsibility — from energy efficiency to locally sourced ingredients.</p>
+                  <p>Eco-conscious travelers expect hotels to demonstrate responsibility ? from energy efficiency to locally sourced ingredients.</p>
                   <h4 className="news-title">08. Extended Stays &amp; Workcations</h4>
                   <p>With remote work normalized, long-stay packages with high-speed internet, co-working spaces, and home comforts are in high demand.</p>
                   <div className="row g-4 mt-3">
@@ -309,13 +215,9 @@ export default function NewsDetailsPage() {
         </div>
       </section>
       {/* News Details Section End */}
-      {/* Aminities Section */}
-      <AminitiesSection />
 
       {/* Instagram Section */}
-      <InstagramSlider wrapperClass="instagram-section-2 fix" />
-
-      {/* Footer Section Start */}
+      <InstagramSlider wrapperClass="instagram-section-2 fix" />{/* Footer Section Start */}
       <footer
         className="footer-section fix bg-cover"
         style={{
@@ -370,7 +272,7 @@ export default function NewsDetailsPage() {
                 <div className="single-footer-widget">
                   <div className="widget-title"><h5>Contact Us</h5></div>
                   <ul className="contact-item">
-                    <li><i className="fa-solid fa-location-dot"></i> The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India</li>
+                    <li><i className="fa-solid fa-location-dot"></i> The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India</li>
                     <li className="style-2"><i className="fa-solid fa-envelope"></i><a href="mailto:info@parkqueenhotels.com">info@parkqueenhotels.com</a></li>
                     <li className="style-2"><i className="fa-solid fa-phone"></i><a href="tel:+919088809991">+91 9088809991</a></li>
                   </ul>

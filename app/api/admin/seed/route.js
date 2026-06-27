@@ -21,7 +21,7 @@ const SITE_SETTINGS = {
   phone: ['+91 9088809991'],
   email: ['info@parkqueenhotels.com'],
   whatsapp: '+919088809991',
-  address: 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India',
+  address: 'The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India',
   city: 'Rohtak',
   state: 'Haryana',
   country: 'India',
@@ -91,11 +91,11 @@ const OFFERS = [
 ]
 
 const TESTIMONIALS = [
-  { name: 'Rajesh Sharma', role: 'Business Executive, Delhi',     rating: 5, content: "The ParkQueen Hotel exceeded my expectations in every way. The conference facilities were outstanding for my corporate meetings, and the rooms offered complete comfort after long work days. Exceptional service throughout!", image: { url: 'https://ui-avatars.com/api/?name=Rajesh+Sharma&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 1 },
-  { name: 'Priya Kapoor',  role: 'Travel Blogger, Chandigarh',    rating: 5, content: "A truly luxurious experience in the heart of Rohtak! The staff's warmth and attentiveness made us feel like royalty. The dining was exceptional — a perfect blend of Indian flavours and continental delicacies.", image: { url: 'https://ui-avatars.com/api/?name=Priya+Kapoor&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 2 },
-  { name: 'Amit Verma',    role: 'Family Traveler, Gurgaon',      rating: 5, content: "We celebrated our anniversary at The ParkQueen Hotel and it was absolutely wonderful. The banquet arrangements were beautiful, the rooms immaculate, and the service was second to none. Will definitely visit again!", image: { url: 'https://ui-avatars.com/api/?name=Amit+Verma&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 3 },
-  { name: 'Sunita Mehta',  role: 'Corporate Guest, Noida',        rating: 5, content: "Best hotel in Rohtak without a doubt! Clean, comfortable, and the staff goes above and beyond. The bar & lounge is perfect for unwinding after a busy day. The breakfast spread was delicious — a true five-star experience.", image: { url: 'https://ui-avatars.com/api/?name=Sunita+Mehta&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 4 },
-  { name: 'Deepak Agarwal', role: 'Wedding Host, Rohtak',         rating: 5, content: "Hosted my daughter's wedding reception at The ParkQueen Hotel. The banquet hall was beautifully decorated, the catering was magnificent, and the entire team was incredibly professional. A memorable event made even more special!", image: { url: 'https://ui-avatars.com/api/?name=Deepak+Agarwal&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 5 },
+  { name: 'Vikram Singh',  role: 'Wedding Host, Delhi NCR',      rating: 5, content: "We hosted our daughter's wedding reception at The ParkQueen Hotel and it was truly magnificent. The banquet arrangements, the food spread, and the hospitality of the staff were beyond our expectations. Our guests are still talking about it!", image: { url: 'https://ui-avatars.com/api/?name=Vikram+Singh&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 1 },
+  { name: 'Meera Gupta',   role: 'Business Traveler, Noida',     rating: 5, content: "I frequently visit Rohtak for corporate work and The ParkQueen Hotel is my go-to stay. The conference facilities are top-class, rooms are immaculately clean, and the staff is always professional and welcoming. Highly recommended!", image: { url: 'https://ui-avatars.com/api/?name=Meera+Gupta&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 2 },
+  { name: 'Arjun Mehta',   role: 'Family Guest, Faridabad',      rating: 5, content: "A perfect family holiday near Delhi Bypass, Rohtak. The rooms were spacious and spotless, the dining was delicious, and the children loved every moment. The staff treated us like family. We will definitely come back!", image: { url: 'https://ui-avatars.com/api/?name=Arjun+Mehta&background=1a1c2e&color=cda434&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 3 },
+  { name: 'Pooja Verma',   role: 'Honeymoon Guest, Gurgaon',     rating: 5, content: "My husband and I spent our honeymoon at The ParkQueen Hotel and it was absolutely dreamy. The room décor was elegant, the Bar & Lounge was perfect for evenings, and every single staff member made us feel incredibly special.", image: { url: 'https://ui-avatars.com/api/?name=Pooja+Verma&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 4 },
+  { name: 'Rohit Kumar',   role: 'Corporate Event, Sonipat',     rating: 5, content: "Organised a seminar for 80 delegates at The ParkQueen Hotel. The conference hall setup was flawless, catering was excellent, and the event team was supremely cooperative. A truly professional hotel that delivers on every promise!", image: { url: 'https://ui-avatars.com/api/?name=Rohit+Kumar&background=cda434&color=1a1c2e&size=128&rounded=true&bold=true', public_id: '' }, status: 'active', order: 5 },
 ]
 
 const GALLERY = [
@@ -174,7 +174,7 @@ const PAGE_CONTENTS = [
     page: 'contact',
     data: {
       breadcrumbBg: '/assets/img/breadcrumb.jpg',
-      location: 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India',
+      location: 'The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India',
       email: 'info@parkqueenhotels.com',
       phone: '+91 9088809991',
       mapEmbed: 'https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed',
@@ -200,7 +200,7 @@ const PAGE_CONTENTS = [
       siteName: 'The ParkQueen Hotel',
       phone: '+91 9088809991',
       email: 'info@parkqueenhotels.com',
-      address: 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India',
+      address: 'The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India',
       footerBg: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80',
       footerTagline: 'At The ParkQueen Hotel, luxury is a crafted experience that blends elegance, comfort, and exceptional service in Rohtak.',
     },

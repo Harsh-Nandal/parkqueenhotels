@@ -7,7 +7,7 @@ const DEFAULTS = {
   tagline: 'Luxury Hotel in Rohtak',
   phone: ['+91 9088809991'],
   email: ['info@parkqueenhotels.com'],
-  address: 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India',
+  address: 'The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India',
   mapEmbed: 'https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed',
   social: { facebook: '#', twitter: '#', instagram: '#', linkedin: '#', youtube: '#' },
   footer: {

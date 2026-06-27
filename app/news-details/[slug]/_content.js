@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react'
 import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
-import AminitiesSection from '@/app/_components/AminitiesSection'
-import MobileNav from '@/app/_components/MobileNav'
+import SharedHeader from '@/app/_components/SharedHeader'
 
 const FOOTER_BG = 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80'
 
@@ -47,98 +46,13 @@ export default function BlogDetailContent({ slug }) {
   const fmt = d => d ? new Date(d).toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' }) : ''
   const phone = settings.phone?.[0] || '+91 9088809991'
   const email = settings.email?.[0] || 'info@parkqueenhotels.com'
-  const address = settings.address || 'The ParkQueen Hotel, Opposite Devi Lal Park, Rohtak, Haryana 124001, India'
+  const address = settings.address || 'The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India'
   const heroBg = bannerBg([hero?.backgroundImage], '/assets/images/home/NDS_5001.jpg')
   const heroTitle = hero?.title || 'Blog Details'
 
   return (
     <>
-      <button id="back-top" className="back-to-top show"><i className="fa-regular fa-arrow-up"></i></button>
-      <div className="mouseCursor cursor-outer"></div>
-      <div className="mouseCursor cursor-inner"></div>
-
-      {/* Offcanvas */}
-      <div className="fix-area">
-        <div className="offcanvas__info">
-          <div className="offcanvas__wrapper">
-            <div className="offcanvas__content">
-              <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                <div className="offcanvas__logo">
-                  <a href="/"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel logo" /></a>
-                </div>
-                <div className="offcanvas__close"><button><i className="fas fa-times"></i></button></div>
-              </div>
-              <MobileNav />
-              <div className="text d-none d-xl-block">
-                <p>Welcome to The ParkQueen Hotel, your trusted destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p>
-                <h4 className="d-xl-block">Contact Info</h4>
-                <ul className="d-xl-block">
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon"><i className="fal fa-map-marker-alt"></i></div>
-                    <div className="offcanvas__contact-text"><a href="/contact">{address}</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="fal fa-envelope"></i></div>
-                    <div className="offcanvas__contact-text"><a href={`mailto:${email}`}>{email}</a></div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15"><i className="far fa-phone"></i></div>
-                    <div className="offcanvas__contact-text"><a href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</a></div>
-                  </li>
-                </ul>
-                <div className="social-icon d-flex align-items-center">
-                  <a href={settings.social?.facebook || '#'} aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                  <a href={settings.social?.twitter || '#'} aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                  <a href={settings.social?.youtube || '#'} aria-label="YouTube"><i className="fab fa-youtube"></i></a>
-                  <a href={settings.social?.linkedin || '#'} aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="offcanvas__overlay"></div>
-
-      {/* Header */}
-      <header id="header-sticky" className="header-1">
-        <div className="container-fluid">
-          <div className="mega-menu-wrapper">
-            <div className="header-main">
-              <div className="header-left">
-                <div className="logo">
-                  <a href="/" className="header-logo"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel" /></a>
-                  <a href="/" className="header-logo-2"><img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel" /></a>
-                </div>
-              </div>
-              <div className="mean__menu-wrapper d-none d-xl-block">
-                <div className="main-menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li className="has-dropdown menu-thumb"><a href="/">Home</a></li>
-                      <li className="has-dropdown d-xl-none"><a href="/" className="border-none">Home</a></li>
-                      <li><a href="/about">About Us</a></li>
-                      <li className="has-dropdown"><a href="/facilities">Facilities</a></li>
-                      <li><a href="/service">Service</a></li>
-                      <li className="active"><a href="/news">Blog</a></li>
-                      <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              <div className="header-right d-flex justify-content-end align-items-center">
-                <div className="call-item">
-                  <div className="icon"><i className="fa-solid fa-phone"></i></div>
-                  <h6><a href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</a></h6>
-                </div>
-                <div className="header-button"><a href="/contact" className="theme-btn">BOOK NOW</a></div>
-                <div className="header__hamburger d-xl-none my-auto">
-                  <div className="sidebar__toggle"><i className="fas fa-bars"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SharedHeader />
 
       {/* Breadcrumb */}
       <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: `url('${heroBg}')` }}>
@@ -274,7 +188,6 @@ export default function BlogDetailContent({ slug }) {
         </div>
       </section>
 
-      <AminitiesSection />
       <InstagramSlider wrapperClass="instagram-section-2 fix" />
 
       {/* Footer */}
