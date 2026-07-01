@@ -142,25 +142,46 @@ export default function AdminSiteSettings() {
               Contact Details
             </div>
             <div className="card-bd">
+              <div className="mb-2" style={{ fontSize: 12, fontWeight: 700, color: '#1a1c2e', textTransform: 'uppercase', letterSpacing: 1 }}>
+                Rooms &amp; Calling
+              </div>
               <div className="grid-2 mb-3">
-                <div>
-                  <label className="flabel">Phone 1</label>
-                  <input
-                    className="finput"
-                    value={form.phone?.[0] || ''}
-                    onChange={e => set('phone', [e.target.value, form.phone?.[1] || ''])}
-                    placeholder="+91 00000 00000"
-                  />
-                </div>
-                <div>
-                  <label className="flabel">Phone 2</label>
-                  <input
-                    className="finput"
-                    value={form.phone?.[1] || ''}
-                    onChange={e => set('phone', [form.phone?.[0] || '', e.target.value])}
-                    placeholder="+91 00000 00000"
-                  />
-                </div>
+                {[0, 1, 2, 3].map(i => (
+                  <div key={i}>
+                    <label className="flabel">Phone {i + 1}</label>
+                    <input
+                      className="finput"
+                      value={form.phone?.[i] || ''}
+                      onChange={e => {
+                        const next = [...(form.phone || [])]
+                        next[i] = e.target.value
+                        set('phone', next)
+                      }}
+                      placeholder="+91 00000 00000"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="mb-2" style={{ fontSize: 12, fontWeight: 700, color: '#1a1c2e', textTransform: 'uppercase', letterSpacing: 1 }}>
+                Restaurants &amp; Bar
+              </div>
+              <div className="grid-2 mb-3">
+                {[0, 1, 2, 3].map(i => (
+                  <div key={i}>
+                    <label className="flabel">Dining Phone {i + 1}</label>
+                    <input
+                      className="finput"
+                      value={form.diningPhone?.[i] || ''}
+                      onChange={e => {
+                        const next = [...(form.diningPhone || [])]
+                        next[i] = e.target.value
+                        set('diningPhone', next)
+                      }}
+                      placeholder="+91 00000 00000"
+                    />
+                  </div>
+                ))}
               </div>
 
               <div className="grid-2 mb-3">

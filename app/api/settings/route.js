@@ -5,11 +5,12 @@ import { verifyAuth } from '@/lib/auth'
 const DEFAULTS = {
   siteName: 'The ParkQueen Hotel',
   tagline: 'Luxury Hotel in Rohtak',
-  phone: ['+91 9088809991'],
+  phone: ['+91 9088809991', '+91 9088809992', '+91 9088879994', '+91 9088879995'],
+  diningPhone: ['+91 9088879990', '+91 9088879991', '+91 9088809993', '+91 9088809994'],
   email: ['info@parkqueenhotels.com'],
   address: 'The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India',
   mapEmbed: 'https://maps.google.com/maps?q=The+ParkQueen+Hotel+Rohtak+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed',
-  social: { facebook: '#', twitter: '#', instagram: '#', linkedin: '#', youtube: '#' },
+  social: { facebook: 'https://www.facebook.com/hotelparkqueen/#', twitter: 'https://x.com/parkqueenhotel_', instagram: 'https://www.instagram.com/parkqueenhotel_rohtak/?hl=en', linkedin: 'https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/', youtube: '#' },
   footer: {
     tagline: 'At The ParkQueen Hotel, luxury is a crafted experience that blends elegance, comfort, and exceptional service in Rohtak.',
     copyright: 'The ParkQueen Hotel',

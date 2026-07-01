@@ -1,6 +1,7 @@
 'use client'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 
 export default function NewsDetailsPage() {
@@ -9,21 +10,12 @@ export default function NewsDetailsPage() {
       <SharedHeader />
 
       {/* Breadcrumb Start */}
-      <div
-        className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: "url('/assets/images/home/NDS_5148.jpg')" }}
-      >
-        <div className="container">
-          <div className="page-heading">
-            <h1>Blog Details</h1>
-            <ul className="breadcrumb-items">
-              <li><a href="/">Home</a></li>
-              <li><i className="fa-solid fa-chevron-right"></i></li>
-              <li>Blog Details</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        bg="/assets/images/home/NDS_5148.jpg"
+        kicker="Hospitality"
+        title="Blog Details"
+        crumbs={[{ label: 'Blog', href: '/news' }, { label: 'Blog Details' }]}
+      />
       {/* Breadcrumb End */}
 
       {/* News Details Section Start */}
@@ -283,16 +275,12 @@ export default function NewsDetailsPage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="/contact"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="/contact"><i className="fa-brands fa-twitter"></i></a>
-                <a href="/contact"><i className="fa-brands fa-instagram"></i></a>
-                <a href="/contact"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com/parkqueenhotel_" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="/contact">Terms &amp; Conditions</a></li>
-                <li>/</li>
-                <li><a href="/contact">Privacy Policy</a></li>
-                <li>/</li>
                 <li><a href="/contact">Contact Us</a></li>
               </ul>
               <p className="wow fadeInRight" data-wow-delay=".7s">Copyright&copy; <span>The ParkQueen Hotel</span></p>

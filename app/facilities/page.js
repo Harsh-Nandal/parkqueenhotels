@@ -1,22 +1,36 @@
-'use client'
+﻿'use client'
 import { useState, useEffect } from 'react'
 import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 
 const STATIC_FACILITIES = [
-  { _id: 'f1', image: { url: '/assets/images/dining/NDS_5117.jpg'  }, icon: 'fa-utensils',           title: 'Restaurant & Dining', text: 'Savor exceptional cuisine crafted by our chefs ? from traditional Indian flavours to continental delights.' },
-  { _id: 'f2', image: { url: '/assets/images/dining/NDS_5151.jpg'  }, icon: 'fa-briefcase',           title: 'Business Centre',    text: 'Fully equipped business centre with high-speed internet, printing, and support services for corporate guests.' },
-  { _id: 'f3', image: { url: '/assets/images/dining/NDS_4994.jpg'  }, icon: 'fa-champagne-glasses',   title: 'Banquets & Events',  text: 'Host your weddings, corporate events, and celebrations in our beautifully appointed banquet halls.' },
-  { _id: 'f4', image: { url: '/assets/images/home/NDS_5344.jpg'    }, icon: 'fa-presentation-screen', title: 'Conference Hall',    text: 'State-of-the-art conference and meeting facilities for corporate events and business gatherings.' },
-  { _id: 'f6', image: { url: '/assets/images/home/NDS_5400.jpg'    }, icon: 'fa-car-rear',            title: 'Free Guest Parking', text: 'Secure, complimentary parking for all guests.' },
+  { _id: 'f1', image: { url: '/assets/images/rooms/ROOM2.jpg'      }, icon: 'fa-bed',                 title: '40 Spacious Rooms',  text: '40 beautifully appointed rooms and suites, each designed with premium comfort, modern amenities, and elegant interiors for a memorable stay.', href: '/rooms' },
+  { _id: 'f2', image: { url: '/assets/images/dining/NDS_5117.jpg'  }, icon: 'fa-utensils',            title: 'Restaurants',        text: 'Savor exceptional cuisine crafted by our chefs — from traditional Indian flavours to continental delights, served in an elegant setting.', href: '/dining' },
+  { _id: 'f3', image: { url: '/assets/images/dining/NDS_4994.jpg'  }, icon: 'fa-martini-glass-citrus',title: 'Well Stocked Bar',   text: 'Unwind with handcrafted cocktails, premium spirits, and fine wines at our well-stocked bar, perfect for relaxing evenings.', href: '/dining' },
+  { _id: 'f4', image: { url: '/assets/images/events/NDS_5160.jpg'  }, icon: 'fa-presentation-screen', title: 'Conference Halls',   text: 'State-of-the-art conference halls equipped with modern AV technology, ideal for corporate meetings and business gatherings.', href: '/banquets' },
+  { _id: 'f5', image: { url: '/assets/images/events/NDS_5266.jpg'  }, icon: 'fa-champagne-glasses',   title: 'Banquet Halls',      text: 'Host your weddings, receptions, and grand celebrations in our beautifully appointed banquet halls designed to impress.', href: '/banquets' },
+  { _id: 'f6', image: { url: '/assets/images/events/NDS_5346.jpg'  }, icon: 'fa-chalkboard-user',     title: 'Meeting Rooms',      text: 'Versatile meeting rooms equipped with all essential amenities, perfect for seminars, presentations, and business discussions.', href: '/banquets' },
+  { _id: 'f7', image: { url: '/assets/images/dining/NDS_5151.jpg'  }, icon: 'fa-building',            title: 'Rooftop Restaurants',text: 'Enjoy panoramic city views while dining at our rooftop restaurant, offering a memorable culinary experience under the open sky.', href: '/dining' },
+  { _id: 'f8', image: { url: '/assets/images/home/NDS_5400.jpg'    }, icon: 'fa-square-parking',      title: 'Spacious Parking',   text: 'Secure, complimentary, and spacious parking facilities available for all our guests and visitors round the clock.', href: '/contact' },
 ]
 const FOOTER_BG = 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80'
 
+const TITLE_HREF = {
+  '40 Spacious Rooms': '/rooms',
+  'Restaurants': '/dining',
+  'Well Stocked Bar': '/dining',
+  'Conference Halls': '/banquets',
+  'Banquet Halls': '/banquets',
+  'Meeting Rooms': '/banquets',
+  'Rooftop Restaurants': '/dining',
+  'Spacious Parking': '/contact',
+}
+
 export default function FacilitiesPage() {
-  // null = still loading (prevents flash of old static images)
-  const [facilities, setFacilities] = useState(null)
+  const [facilities, setFacilities] = useState(STATIC_FACILITIES)
   const [breadcrumbBg, setBreadcrumbBg] = useState('/assets/images/home/NDS_5397.jpg')
   const [footerBg, setFooterBg] = useState(FOOTER_BG)
   const [hero, setHero] = useState({})
@@ -48,23 +62,12 @@ export default function FacilitiesPage() {
       <SharedHeader />
 
       {/* Breadcrumb Wrapper Start */}
-      <div
-        className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${bannerBg([hero?.backgroundImage, breadcrumbBg], '/assets/images/home/NDS_5397.jpg')}')` }}
-      >
-        <div className="container">
-          <div className="page-heading">
-            <div className="breadcrumb-sub-title">
-              <h1 className="text-white wow fadeInUp" data-wow-delay=".3s">{hero?.title || 'Hotel Facilities'}</h1>
-            </div>
-            <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-              <li><a href="/">Home</a></li>
-              <li><i className="fa-solid fa-chevron-right"></i></li>
-              <li>Hotel Facilities</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        bg={bannerBg('/assets/images/about/subhero.png')}
+        kicker="World-Class Amenities"
+        title={hero?.title || 'Hotel Facilities'}
+        crumbs={[{ label: 'Hotel Facilities' }]}
+      />
 
       {/* Hotel Facilities Section Start */}
       <section className="hotel-facilities-section section-padding fix">
@@ -72,6 +75,7 @@ export default function FacilitiesPage() {
           <div className="row g-4">
             {(facilities || []).map((f, i) => {
               const imgSrc = (f.image?.url && !f.image.url.startsWith('/assets/img/')) ? f.image.url : ['/assets/images/dining/NDS_5117.jpg','/assets/images/dining/NDS_5151.jpg','/assets/images/dining/NDS_4994.jpg','/assets/images/home/NDS_5344.jpg','/assets/images/home/NDS_5397.jpg'][i] || '/assets/images/dining/NDS_5117.jpg'
+              const href = f.href || TITLE_HREF[f.title] || '/facilities'
               return (
                 <div
                   key={f._id || f.id || i}
@@ -80,14 +84,14 @@ export default function FacilitiesPage() {
                 >
                   <div className="hotel-facilities-items">
                     <div className="facilities-image">
-                      <a href="/facilities"><img src={imgSrc} alt={f.title} /></a>
-                      <a href="/facilities"><img src={imgSrc} alt={f.title} /></a>
+                      <a href={href}><img src={imgSrc} alt={f.title} /></a>
+                      <a href={href}><img src={imgSrc} alt={f.title} /></a>
                     </div>
                     <div className="facilities-content">
                       <div className="icon">
                         <i className={`fa-solid ${f.icon || 'fa-star'}`}></i>
                       </div>
-                      <h3>{f.title}</h3>
+                      <h3><a href={href} style={{ color: 'inherit', textDecoration: 'none' }}>{f.title}</a></h3>
                       <p>{f.text || f.description}</p>
                     </div>
                   </div>
@@ -165,16 +169,12 @@ export default function FacilitiesPage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="/contact"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="/contact"><i className="fa-brands fa-twitter"></i></a>
-                <a href="/contact"><i className="fa-brands fa-instagram"></i></a>
-                <a href="/contact"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com/parkqueenhotel_" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="/contact">Terms &amp; Conditions</a></li>
-                <li>/</li>
-                <li><a href="/contact">Privacy Policy</a></li>
-                <li>/</li>
                 <li><a href="/contact">Contact Us</a></li>
               </ul>
               <p className="wow fadeInRight" data-wow-delay=".7s">Copyright&copy; <span>The ParkQueen Hotel</span></p>

@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 
 export default function ServiceDetailsPage() {
@@ -47,29 +48,12 @@ export default function ServiceDetailsPage() {
       <SharedHeader />
 
       {/* Breadcrumb Wrapper Start */}
-      <div
-        className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: "url('/assets/images/home/12121.jpg.jpeg')" }}
-      >
-        <div className="container">
-          <div className="page-heading">
-            <div className="breadcrumb-sub-title">
-              <h1 className="text-white wow fadeInUp" data-wow-delay=".3s">
-                Services Details
-              </h1>
-            </div>
-            <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <i className="fa-solid fa-chevron-right"></i>
-              </li>
-              <li>Services Details</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        bg="/assets/images/home/12121.jpg.jpeg"
+        kicker="Our Services"
+        title="Services Details"
+        crumbs={[{ label: 'Services Details' }]}
+      />
 
       {/* Service Details Section Start */}
       <section className="service-details-section section-padding fix">
@@ -603,16 +587,12 @@ export default function ServiceDetailsPage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="/contact"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="/contact"><i className="fa-brands fa-twitter"></i></a>
-                <a href="/contact"><i className="fa-brands fa-instagram"></i></a>
-                <a href="/contact"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com/parkqueenhotel_" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="/contact">Terms &amp; Conditions</a></li>
-                <li>/</li>
-                <li><a href="/contact">Privacy Policy</a></li>
-                <li>/</li>
                 <li><a href="/contact">Contact Us</a></li>
               </ul>
               <p className="wow fadeInRight" data-wow-delay=".7s">Copyright&copy; <span>The ParkQueen Hotel</span></p>

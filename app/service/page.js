@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 
 const STATIC_SERVICES_BOXES = [
@@ -97,23 +98,12 @@ export default function ServicePage() {
       <SharedHeader />
 
       {/* Breadcrumb */}
-      <div
-        className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${bannerBg([hero?.backgroundImage, breadcrumbBg], '/assets/images/home/NDS_5001.jpg')}')` }}
-      >
-        <div className="container">
-          <div className="page-heading">
-            <div className="breadcrumb-sub-title">
-              <h1 className="text-white wow fadeInUp" data-wow-delay=".3s">{hero?.title || 'Services'}</h1>
-            </div>
-            <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-              <li><a href="/">Home</a></li>
-              <li><i className="fa-solid fa-chevron-right"></i></li>
-              <li>Services</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        bg={bannerBg([hero?.backgroundImage, breadcrumbBg], '/assets/images/home/NDS_5001.jpg')}
+        kicker="Tailored For You"
+        title={hero?.title || 'Services'}
+        crumbs={[{ label: 'Services' }]}
+      />
 
       {/* Service Icon Boxes Section */}
       <section className="service-section section-padding pb-0 fix">

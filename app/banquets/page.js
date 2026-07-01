@@ -1,6 +1,7 @@
 ﻿'use client'
 import { bannerBg } from '@/lib/imgUrl'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 
 const VENUES = [
@@ -14,21 +15,19 @@ export default function BanquetsPage() {
     <>
       <SharedHeader />
 
-      <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: `url('${bannerBg(['/assets/images/home/NDS_5344.jpg'], '/assets/images/home/NDS_5001.jpg')}')` }}>
-        <div className="container"><div className="page-heading">
-          <div className="breadcrumb-sub-title"><h1 className="text-white wow fadeInUp">Banquets &amp; Conference</h1></div>
-          <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-            <li><a href="/">Home</a></li><li><i className="fa-solid fa-chevron-right"></i></li><li>Banquets</li>
-          </ul>
-        </div></div>
-      </div>
+      <PageHero
+        bg={bannerBg(['/assets/images/dining/conferencehall.png'], '/assets/images/dining/conferencehall.png')}
+        kicker="Events & Gatherings"
+        title="Banquets & Conference"
+        crumbs={[{ label: 'Banquets' }]}
+      />
 
       {/* Intro */}
       <section style={{ background: '#fff', padding: '90px 0' }}>
         <div className="container">
           <div className="row g-5 align-items-center">
             <div className="col-lg-6 wow fadeInRight" style={{ order: 2 }}>
-              <img src="/assets/images/home/NDS_5344.jpg" alt="Banquet Hall" style={{ width: '100%', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,.12)' }} />
+              <img src="/assets/images/dining/banquets.webp" alt="Banquet Hall" style={{ width: '100%', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,.12)' }} />
             </div>
             <div className="col-lg-6 wow fadeInLeft" style={{ order: 1 }}>
               <span style={{ color: '#cda434', fontSize: 12, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', display: 'block', marginBottom: 14 }}>Events & Gatherings</span>
@@ -107,7 +106,7 @@ export default function BanquetsPage() {
         </div>
       </section><footer className="footer-section fix bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80')" }}>
         <div className="container"><div className="footer-bottom"><div className="footer-wrapper">
-          <div className="social-icon"><a href="/contact"><i className="fa-brands fa-linkedin"></i></a><a href="/contact"><i className="fa-brands fa-instagram"></i></a><a href="/contact"><i className="fa-brands fa-facebook-f"></i></a></div>
+          <div className="social-icon"><a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a><a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a><a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a></div>
           <ul className="footer-list"><li><a href="/about">About Us</a></li><li>/</li><li><a href="/rooms">Rooms</a></li><li>/</li><li><a href="/contact">Contact Us</a></li></ul>
           <p>Copyright&copy; <span>The ParkQueen Hotel</span></p>
         </div>

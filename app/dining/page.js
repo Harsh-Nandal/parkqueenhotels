@@ -1,21 +1,35 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { bannerBg } from '@/lib/imgUrl'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
+
+const DEFAULT_DINING_PHONE = ['+91 9088879990', '+91 9088879991', '+91 9088809993', '+91 9088809994']
 
 export default function DiningPage() {
+  const [diningPhone, setDiningPhone] = useState(DEFAULT_DINING_PHONE)
+
+  useEffect(() => {
+    fetch('/api/settings')
+      .then(r => r.json())
+      .then(d => { if (d.data?.diningPhone?.length) setDiningPhone(d.data.diningPhone) })
+      .catch(() => {})
+  }, [])
+
+  const [queenPhone, rooftopPhone, barPhone] = diningPhone
+  const telHref = p => `tel:${p.replace(/\s/g, '')}`
+
   return (
     <>
       <SharedHeader />
 
       {/* Breadcrumb */}
-      <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: `url('${bannerBg(['/assets/images/dining/NDS_5117.jpg'], '/assets/images/home/NDS_5001.jpg')}')` }}>
-        <div className="container"><div className="page-heading">
-          <div className="breadcrumb-sub-title"><h1 className="text-white wow fadeInUp">Dining Experience</h1></div>
-          <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-            <li><a href="/">Home</a></li><li><i className="fa-solid fa-chevron-right"></i></li><li>Dining</li>
-          </ul>
-        </div></div>
-      </div>
+      <PageHero
+        bg={bannerBg(['/assets/images/dining/NDS_5117.jpg'], '/assets/images/home/NDS_5001.jpg')}
+        kicker="Culinary Excellence"
+        title="Dining Experience"
+        crumbs={[{ label: 'Dining' }]}
+      />
 
       {/* ── Intro ─────────────────────────────────────────────────── */}
       <section style={{ background: '#fff', padding: '88px 0' }}>
@@ -35,7 +49,7 @@ export default function DiningPage() {
           <div className="row g-5 align-items-center">
             <div className="col-lg-6 wow fadeInLeft">
               <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', boxShadow: '0 16px 60px rgba(0,0,0,.14)' }}>
-                <img src="/assets/images/dining/NDS_5117.jpg" alt="Queen Restaurant" style={{ width: '100%', height: 440, objectFit: 'cover', display: 'block' }} />
+                <img src="/assets/images/dining/queenresturant.webp" alt="Queen Restaurant" style={{ width: '100%', height: 440, objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,28,46,.7) 0%, transparent 55%)' }}></div>
                 <div style={{ position: 'absolute', bottom: 24, left: 24 }}>
                   <span style={{ background: '#cda434', color: '#1a1c2e', fontSize: 11, fontWeight: 800, letterSpacing: 2, textTransform: 'uppercase', padding: '5px 14px', borderRadius: 20 }}>Signature Restaurant</span>
@@ -64,7 +78,12 @@ export default function DiningPage() {
                     </div>
                   ))}
                 </div>
-                <a href="/contact" className="theme-btn">RESERVE A TABLE</a>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+                  <a href="/contact" className="theme-btn">RESERVE A TABLE</a>
+                  <a href={telHref(queenPhone)} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#1a1c2e', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-phone" style={{ color: '#cda434' }}></i>{queenPhone}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -79,7 +98,7 @@ export default function DiningPage() {
           <div className="row g-5 align-items-center">
             <div className="col-lg-6 wow fadeInLeft" style={{ order: 2 }}>
               <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', boxShadow: '0 16px 60px rgba(0,0,0,.35)' }}>
-                <img src="/assets/images/dining/NDS_5151.jpg" alt="Rooftop Restaurant" style={{ width: '100%', height: 440, objectFit: 'cover', display: 'block' }} />
+                <img src="/assets/images/dining/rooftopresturant.webp" alt="Rooftop Restaurant" style={{ width: '100%', height: 440, objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,28,46,.6) 0%, transparent 50%)' }}></div>
                 <div style={{ position: 'absolute', bottom: 24, left: 24 }}>
                   <span style={{ background: 'rgba(205,164,52,.9)', color: '#1a1c2e', fontSize: 11, fontWeight: 800, letterSpacing: 2, textTransform: 'uppercase', padding: '5px 14px', borderRadius: 20 }}>Rooftop Dining</span>
@@ -105,7 +124,12 @@ export default function DiningPage() {
                     </div>
                   ))}
                 </div>
-                <a href="/contact" className="theme-btn">BOOK A ROOFTOP TABLE</a>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+                  <a href="/contact" className="theme-btn">BOOK A ROOFTOP TABLE</a>
+                  <a href={telHref(rooftopPhone)} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#fff', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-phone" style={{ color: '#cda434' }}></i>{rooftopPhone}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -118,7 +142,7 @@ export default function DiningPage() {
           <div className="row g-5 align-items-center">
             <div className="col-lg-6 wow fadeInLeft">
               <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', boxShadow: '0 16px 60px rgba(0,0,0,.12)' }}>
-                <img src="/assets/images/dining/NDS_4994.jpg" alt="Bar & Lounge" style={{ width: '100%', height: 440, objectFit: 'cover', display: 'block' }} />
+                <img src="/assets/images/dining/bar.webp" alt="Bar & Lounge" style={{ width: '100%', height: 440, objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,28,46,.65) 0%, transparent 55%)' }}></div>
                 <div style={{ position: 'absolute', bottom: 24, left: 24 }}>
                   <span style={{ background: '#cda434', color: '#1a1c2e', fontSize: 11, fontWeight: 800, letterSpacing: 2, textTransform: 'uppercase', padding: '5px 14px', borderRadius: 20 }}>Bar & Lounge</span>
@@ -146,7 +170,12 @@ export default function DiningPage() {
                     ))}
                   </div>
                 </div>
-                <a href="/contact" className="theme-btn">VISIT THE LOUNGE</a>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+                  <a href="/contact" className="theme-btn">VISIT THE LOUNGE</a>
+                  <a href={telHref(barPhone)} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#1a1c2e', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-phone" style={{ color: '#cda434' }}></i>{barPhone}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -187,6 +216,12 @@ export default function DiningPage() {
               </div>
             ))}
           </div>
+          <div style={{ textAlign: 'center', marginTop: 40 }}>
+            <p style={{ color: '#6b7280', fontSize: 13, marginBottom: 8 }}>For reservations &amp; enquiries, call our dining team</p>
+            <a href={telHref(diningPhone[3])} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#1a1c2e', fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>
+              <i className="fa-solid fa-phone" style={{ color: '#cda434' }}></i>{diningPhone[3]}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -196,10 +231,10 @@ export default function DiningPage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="/contact" aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="/contact" aria-label="Twitter"><i className="fa-brands fa-twitter"></i></a>
-                <a href="/contact" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                <a href="/contact" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com/parkqueenhotel_" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
                 <li><a href="/about">About Us</a></li><li>/</li>

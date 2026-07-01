@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 
 const HARDCODED_FALLBACK = [
@@ -93,21 +94,12 @@ export default function NewsPage() {
       <SharedHeader />
 
       {/* Breadcrumb */}
-      <div
-        className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url('${bannerBg([breadcrumbBg], '/assets/images/home/NDS_5400.jpg')}')` }}
-      >
-        <div className="container">
-          <div className="page-heading">
-            <h1>{breadcrumbTitle}</h1>
-            <ul className="breadcrumb-items">
-              <li><a href="/">Home</a></li>
-              <li><i className="fa-solid fa-chevron-right"></i></li>
-              <li>{breadcrumbTitle}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        bg={bannerBg([breadcrumbBg], '/assets/images/home/NDS_5400.jpg')}
+        kicker="Latest News & Articles"
+        title={breadcrumbTitle}
+        crumbs={[{ label: breadcrumbTitle }]}
+      />
 
       {/* News Listing */}
       <section className="news-standard-section section-padding" style={{ overflowX: 'hidden' }}>

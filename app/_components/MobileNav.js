@@ -8,6 +8,7 @@ const LINKS = [
   { href: '/dining',     label: 'Dining' },
   { href: '/banquets',   label: 'Banquets' },
   { href: '/facilities', label: 'Facilities' },
+  { href: '/gallery',    label: 'Gallery' },
   { href: '/booking',    label: 'Book Now' },
   { href: '/contact',    label: 'Contact Us' },
 ]

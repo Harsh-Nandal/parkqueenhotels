@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 const FOOTER_BG = 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80'
 
@@ -55,22 +56,15 @@ export default function BlogDetailContent({ slug }) {
       <SharedHeader />
 
       {/* Breadcrumb */}
-      <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: `url('${heroBg}')` }}>
-        <div className="container">
-          <div className="page-heading">
-            <div className="breadcrumb-sub-title">
-              <h1 className="text-white wow fadeInUp" data-wow-delay=".3s">{heroTitle}</h1>
-            </div>
-            <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-              <li><a href="/">Home</a></li>
-              <li><i className="fa-solid fa-chevron-right"></i></li>
-              <li><a href="/news">Blog</a></li>
-              <li><i className="fa-solid fa-chevron-right"></i></li>
-              <li>{post?.title ? (post.title.length > 40 ? post.title.slice(0, 40) + '…' : post.title) : 'Article'}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        bg={heroBg}
+        kicker="Hospitality"
+        title={heroTitle}
+        crumbs={[
+          { label: 'Blog', href: '/news' },
+          { label: post?.title ? (post.title.length > 40 ? post.title.slice(0, 40) + '…' : post.title) : 'Article' },
+        ]}
+      />
 
       {/* Article Content */}
       <section className="news-details-section section-padding">

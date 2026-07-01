@@ -59,7 +59,7 @@ export default function InstagramSlider({ wrapperClass = 'instagram-section-2 fi
               <div className="instagram-banner-items">
                 <div className="banner-image">
                   <img src={src} alt="insta-img" />
-                  <a href="/news" className="icon">
+                  <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer" className="icon">
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                 </div>

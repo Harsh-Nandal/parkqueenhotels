@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { bannerBg } from '@/lib/imgUrl'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 
 const ROOMS = [
@@ -55,16 +56,12 @@ export default function RoomsPage() {
       <SharedHeader />
 
       {/* Breadcrumb */}
-      <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: `url('${bannerBg(['/assets/images/home/NDS_5403.jpg'], '/assets/images/home/NDS_5148.jpg')}')` }}>
-        <div className="container">
-          <div className="page-heading">
-            <div className="breadcrumb-sub-title"><h1 className="text-white wow fadeInUp">Rooms &amp; Tariff</h1></div>
-            <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-              <li><a href="/">Home</a></li><li><i className="fa-solid fa-chevron-right"></i></li><li>Rooms</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        bg={bannerBg(['/assets/images/about/subhero.png'], '/assets/images/home/NDS_5148.jpg')}
+        kicker="Accommodation"
+        title="Rooms & Tariff"
+        crumbs={[{ label: 'Rooms' }]}
+      />
 
       {/* Tariff Table */}
       <section style={{ background: '#fff', padding: '80px 0' }}>
@@ -186,10 +183,10 @@ export default function RoomsPage() {
           <div className="footer-bottom">
             <div className="footer-wrapper">
               <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="/contact" aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="/contact" aria-label="Twitter"><i className="fa-brands fa-twitter"></i></a>
-                <a href="/contact" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                <a href="/contact" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com/parkqueenhotel_" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
               <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
                 <li><a href="/about">About Us</a></li><li>/</li>

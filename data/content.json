@@ -428,63 +428,59 @@
     "items": [
       {
         "id": 1,
-        "image": {
-          "url": "https://res.cloudinary.com/dvanvxd7t/image/upload/v1782201243/parkqueen/qr46fe5lwqazxdcximjz.jpg",
-          "public_id": "parkqueen/qr46fe5lwqazxdcximjz"
-        },
-        "icon": "fa-utensils",
-        "title": "Relax in Style",
-        "text": "Savor exceptional cuisine crafted by our chefs — from traditional Indian flavours to continental delights."
+        "image": { "url": "/assets/images/rooms/ROOM2.jpg", "public_id": "" },
+        "icon": "fa-bed",
+        "title": "40 Spacious Rooms",
+        "text": "40 beautifully appointed rooms and suites, each designed with premium comfort, modern amenities, and elegant interiors for a memorable stay."
       },
       {
         "id": 2,
-        "image": {
-          "url": "https://res.cloudinary.com/dvanvxd7t/image/upload/v1782203241/parkqueen/bsmsqmwa9ncdbspkp2ei.jpg",
-          "public_id": "parkqueen/bsmsqmwa9ncdbspkp2ei"
-        },
-        "icon": "fa-restroom",
-        "title": "Spaces for Meetings & Events",
-        "text": "Host business meetings, corporate events, seminars, and celebrations in versatile spaces equipped with modern facilities."
+        "image": { "url": "/assets/images/dining/NDS_5117.jpg", "public_id": "" },
+        "icon": "fa-utensils",
+        "title": "Restaurants",
+        "text": "Savor exceptional cuisine crafted by our chefs — from traditional Indian flavours to continental delights, served in an elegant setting."
       },
       {
         "id": 3,
-        "image": {
-          "url": "https://res.cloudinary.com/dvanvxd7t/image/upload/v1782203259/parkqueen/tsegyzr2e7ac3i8yxkyv.jpg",
-          "public_id": "parkqueen/tsegyzr2e7ac3i8yxkyv"
-        },
-        "icon": "fa-champagne-glasses",
-        "title": "Banquets & Events",
-        "text": "Host your weddings, corporate events, and celebrations in our beautifully appointed banquet halls."
+        "image": { "url": "/assets/images/dining/NDS_4994.jpg", "public_id": "" },
+        "icon": "fa-martini-glass-citrus",
+        "title": "Well Stocked Bar",
+        "text": "Unwind with handcrafted cocktails, premium spirits, and fine wines at our well-stocked bar, perfect for relaxing evenings."
       },
       {
         "id": 4,
-        "image": {
-          "url": "https://res.cloudinary.com/dvanvxd7t/image/upload/v1782203275/parkqueen/f9ypxp51vhsjviadh1nh.jpg",
-          "public_id": "parkqueen/f9ypxp51vhsjviadh1nh"
-        },
-        "icon": "fa-dumbbell",
-        "title": "Luxury Rooms & Suites",
-        "text": "Spacious interiors, premium amenities, and a relaxing atmosphere designed to make every stay comfortable and memorable."
+        "image": { "url": "/assets/images/events/NDS_5160.jpg", "public_id": "" },
+        "icon": "fa-presentation-screen",
+        "title": "Conference Halls",
+        "text": "State-of-the-art conference halls equipped with modern AV technology, ideal for corporate meetings and business gatherings."
       },
       {
         "id": 5,
-        "image": {
-          "url": "https://res.cloudinary.com/dvanvxd7t/image/upload/v1782203288/parkqueen/rfzybmhlrnv4p3jpgeuw.jpg",
-          "public_id": "parkqueen/rfzybmhlrnv4p3jpgeuw"
-        },
-        "icon": "fa-person-swimming",
-        "title": "Spaces for Meetings & Events",
-        "text": "Enjoy handcrafted cocktails, premium spirits, and a sophisticated ambiance perfect for relaxing after a busy day."
+        "image": { "url": "/assets/images/events/NDS_5266.jpg", "public_id": "" },
+        "icon": "fa-champagne-glasses",
+        "title": "Banquet Halls",
+        "text": "Host your weddings, receptions, and grand celebrations in our beautifully appointed banquet halls designed to impress."
       },
       {
         "id": 6,
-        "image": {
-          "url": "https://res.cloudinary.com/dvanvxd7t/image/upload/v1782203298/parkqueen/iqw7hyjwelicsbljecic.jpg",
-          "public_id": "parkqueen/iqw7hyjwelicsbljecic"
-        },
-        "icon": "fa-car-rear",
-        "title": "Signature Drinks & Fine Spirits",
-        "text": "Enjoy handcrafted cocktails, premium spirits, and a sophisticated ambiance perfect for relaxing after a busy day."
+        "image": { "url": "/assets/images/events/NDS_5346.jpg", "public_id": "" },
+        "icon": "fa-people-group",
+        "title": "Meeting Rooms",
+        "text": "Versatile meeting rooms equipped with all essential amenities, perfect for seminars, presentations, and business discussions."
+      },
+      {
+        "id": 7,
+        "image": { "url": "/assets/images/dining/NDS_5151.jpg", "public_id": "" },
+        "icon": "fa-building",
+        "title": "Rooftop Restaurants",
+        "text": "Enjoy panoramic city views while dining at our rooftop restaurant, offering a memorable culinary experience under the open sky."
+      },
+      {
+        "id": 8,
+        "image": { "url": "/assets/images/home/NDS_5400.jpg", "public_id": "" },
+        "icon": "fa-square-parking",
+        "title": "Spacious Parking",
+        "text": "Secure, complimentary, and spacious parking facilities available for all our guests and visitors round the clock."
       }
     ]
   }

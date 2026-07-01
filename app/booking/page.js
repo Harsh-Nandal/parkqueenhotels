@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { bannerBg } from '@/lib/imgUrl'
 import SharedHeader from '@/app/_components/SharedHeader'
+import PageHero from '@/app/_components/PageHero'
 
 const ROOMS = [
   { value: 'Executive Room',     label: 'Executive Room',     price: '₹5,000 / Night' },
@@ -99,14 +100,12 @@ export default function BookingPage() {
       <SharedHeader />
 
       {/* Breadcrumb */}
-      <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: `url('${bannerBg(['/assets/images/home/NDS_5344.jpg'], '/assets/images/home/NDS_5148.jpg')}')` }}>
-        <div className="container"><div className="page-heading">
-          <div className="breadcrumb-sub-title"><h1 className="text-white wow fadeInUp">Book Your Stay</h1></div>
-          <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-            <li><a href="/">Home</a></li><li><i className="fa-solid fa-chevron-right"></i></li><li>Booking</li>
-          </ul>
-        </div></div>
-      </div>
+      <PageHero
+        bg={bannerBg(['/assets/images/home/NDS_5344.jpg'], '/assets/images/home/NDS_5148.jpg')}
+        kicker="Reserve Your Stay"
+        title="Book Your Stay"
+        crumbs={[{ label: 'Booking' }]}
+      />
 
       {/* ── Why Book With Us strip ──────────────────────────────── */}
       <section style={{ background: '#1a1c2e', padding: '48px 0' }}>
@@ -352,7 +351,7 @@ export default function BookingPage() {
       {/* Footer */}
       <footer className="footer-section fix bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80')" }}>
         <div className="container"><div className="footer-bottom"><div className="footer-wrapper">
-          <div className="social-icon"><a href="/contact"><i className="fa-brands fa-linkedin"></i></a><a href="/contact"><i className="fa-brands fa-instagram"></i></a><a href="/contact"><i className="fa-brands fa-facebook-f"></i></a></div>
+          <div className="social-icon"><a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a><a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a><a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a></div>
           <ul className="footer-list"><li><a href="/about">About Us</a></li><li>/</li><li><a href="/rooms">Rooms</a></li><li>/</li><li><a href="/contact">Contact</a></li></ul>
           <p>Copyright&copy; <span>The ParkQueen Hotel</span></p>
         </div>
