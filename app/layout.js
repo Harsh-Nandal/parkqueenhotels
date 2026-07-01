@@ -1,5 +1,5 @@
 import Script from 'next/script'
-import BookingModal from '@/app/_components/BookingModal'
+import FloatingButtons from '@/app/_components/FloatingButtons'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://parkqueenhotels.com'
 const OG_IMAGE = `${SITE_URL}/assets/images/og-image.jpg`
@@ -67,8 +67,8 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/assets/css/main.css" />
       </head>
       <body>
-        <BookingModal />
         {children}
+        <FloatingButtons />
 
         {/* jQuery MUST load first — all plugins depend on it */}
         <Script src="/assets/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />

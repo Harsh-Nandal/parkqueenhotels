@@ -2,6 +2,7 @@
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
 import PageHero from '@/app/_components/PageHero'
+import Footer from '@/app/_components/Footer'
 
 
 export default function NewsDetailsPage() {
@@ -82,12 +83,12 @@ export default function NewsDetailsPage() {
                       <div className="content">
                         <div className="head d-flex flex-wrap gap-2 align-items-center justify-content-between">
                           <div className="con">
-                            <h5><a href="/news-details">Leslie Alexander</a></h5>
+                            <h5><a href="/news-details">Ritu Verma</a></h5>
                             <span>February 10, 2024 at 2:37 pm</span>
                           </div>
                           <a href="/news-details" className="reply">Reply</a>
                         </div>
-                        <p className="mt-30 mb-4">Neque porro est qui dolorem ipsum quia quaed inventor veritatis et quasi architecto var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy.</p>
+                        <p className="mt-30 mb-4">Really enjoyed reading this — we stayed at The ParkQueen last month and the experience was exactly as described. The staff went above and beyond to make our family feel at home. Will definitely be back!</p>
                       </div>
                     </div>
                     <div className="blog-single-comment d-flex gap-4 pt-4 pb-4">
@@ -95,12 +96,12 @@ export default function NewsDetailsPage() {
                       <div className="content">
                         <div className="head d-flex flex-wrap gap-2 align-items-center justify-content-between">
                           <div className="con">
-                            <h5><a href="/news-details">Joseph Michael</a></h5>
-                            <span>February 10, 2024 at 2:37 pm</span>
+                            <h5><a href="/news-details">Sunil Bhardwaj</a></h5>
+                            <span>February 12, 2024 at 11:15 am</span>
                           </div>
                           <a href="/news-details" className="reply">Reply</a>
                         </div>
-                        <p className="mt-30 mb-4">Neque porro est qui dolorem ipsum quia quaed inventor veritatis et quasi architecto var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy.</p>
+                        <p className="mt-30 mb-4">Great article! The ParkQueen is truly the best hotel in Rohtak. The dining experience especially stood out — the North Indian cuisine is authentic and the portions are generous. Highly recommend to anyone visiting the city.</p>
                       </div>
                     </div>
                   </div>
@@ -209,89 +210,8 @@ export default function NewsDetailsPage() {
       {/* News Details Section End */}
 
       {/* Instagram Section */}
-      <InstagramSlider wrapperClass="instagram-section-2 fix" />{/* Footer Section Start */}
-      <footer
-        className="footer-section fix bg-cover"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80')",
-        }}
-      >
-        <div className="container">
-          <div className="footer-newsletter">
-            <div className="newsletter-content">
-              <h3>Stay updated with The ParkQueen Hotel</h3>
-              <p>At The ParkQueen Hotel, luxury is a crafted experience that blends elegance, comfort, and exceptional service in Rohtak.</p>
-            </div>
-            <form action="#">
-              <div className="form-clt">
-                <i className="fa-solid fa-envelope"></i>
-                <input type="text" name="email" id="email-footer-nd" placeholder="enter your email" />
-                <button type="submit" className="theme-btn">subscribe now</button>
-              </div>
-            </form>
-          </div>
-          <div className="footer-widget-wrapper">
-            <div className="row">
-              <div className="col-xl-4 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".2s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>About us</h5></div>
-                  <div className="footer-content"><p>Welcome to The ParkQueen Hotel, your destination for refined luxury stays and hospitality that feels personal, polished, and effortless.</p></div>
-                </div>
-              </div>
-              <div className="col-xl-2 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".4s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>hotel best services</h5></div>
-                  <ul className="list">
-                    <li><a href="/contact">Airport pickup &amp; drop</a></li>
-                    <li><a href="/service-details">Room booking</a></li>
-                    <li><a href="/service">special offers</a></li>
-                    <li><a href="/service">special foods</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-xl-3 ps-lg-5 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".6s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>check in &amp; out time</h5></div>
-                  <ul className="date-list">
-                    <li>Check In : <span className="style-1">12:00 PM</span></li>
-                    <li>Check Out : <span>11:00 AM</span></li>
-                    <li>Open : <span className="style-1">24 Hours / 7 Days</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-xl-3 ps-lg-5 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".8s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>Contact Us</h5></div>
-                  <ul className="contact-item">
-                    <li><i className="fa-solid fa-location-dot"></i> The ParkQueen Hotel, Near Delhi Bypass, Rohtak, Haryana 124001, India</li>
-                    <li className="style-2"><i className="fa-solid fa-envelope"></i><a href="mailto:info@parkqueenhotels.com">info@parkqueenhotels.com</a></li>
-                    <li className="style-2"><i className="fa-solid fa-phone"></i><a href="tel:+919088809991">+91 9088809991</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <div className="footer-wrapper">
-              <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="https://x.com/parkqueenhotel_" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
-                <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
-              </div>
-              <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="/contact">Contact Us</a></li>
-              </ul>
-              <p className="wow fadeInRight" data-wow-delay=".7s">Copyright&copy; <span>The ParkQueen Hotel</span></p>
-            </div>
-            <a href="/" className="footer-logo wow fadeInUp" data-wow-delay=".3s">
-              <img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="img" />
-            </a>
-          </div>
-        </div>
-      </footer>
-      {/* Footer End */}
+      <InstagramSlider wrapperClass="instagram-section-2 fix" />
+      <Footer />
     </>
   )
 }

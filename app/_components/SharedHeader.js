@@ -149,7 +149,7 @@ export default function SharedHeader() {
             <div className="d-none d-xl-block" style={{ width: 1, height: 28, background: 'rgba(205,164,52,.3)', margin: '0 20px' }}></div>
 
             {/* BOOK NOW */}
-            <a href="/contact" className="d-none d-xl-block" style={{
+            <a href="/booking" className="d-none d-xl-block" style={{
               padding: '9px 22px',
               fontSize: 12,
               fontWeight: 700,

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { bannerBg } from '@/lib/imgUrl'
 import SharedHeader from '@/app/_components/SharedHeader'
 import PageHero from '@/app/_components/PageHero'
+import Footer from '@/app/_components/Footer'
 
 const DEFAULT_DINING_PHONE = ['+91 9088879990', '+91 9088879991', '+91 9088809993', '+91 9088809994']
 
@@ -225,31 +226,7 @@ export default function DiningPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer-section fix bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80')" }}>
-        <div className="container">
-          <div className="footer-bottom">
-            <div className="footer-wrapper">
-              <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href="https://www.linkedin.com/in/parkqueen-hotels-and-resorts-9a2532400/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="https://x.com/parkqueenhotel_" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fa-brands fa-twitter"></i></a>
-                <a href="https://www.instagram.com/parkqueenhotel_rohtak/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/hotelparkqueen/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-              </div>
-              <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="/about">About Us</a></li><li>/</li>
-                <li><a href="/rooms">Rooms</a></li><li>/</li>
-                <li><a href="/banquets">Banquets</a></li><li>/</li>
-                <li><a href="/contact">Contact Us</a></li>
-              </ul>
-              <p className="wow fadeInRight" data-wow-delay=".7s">Copyright&copy; <span>The ParkQueen Hotel</span></p>
-            </div>
-            <a href="/" className="footer-logo wow fadeInUp" data-wow-delay=".3s">
-              <img style={{ width: '18rem' }} src="/assets/images/logo.png" alt="The ParkQueen Hotel" />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

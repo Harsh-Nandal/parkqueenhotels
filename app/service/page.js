@@ -4,6 +4,7 @@ import { imgUrl, bannerBg } from '@/lib/imgUrl'
 import InstagramSlider from '@/app/_components/InstagramSlider'
 import SharedHeader from '@/app/_components/SharedHeader'
 import PageHero from '@/app/_components/PageHero'
+import Footer from '@/app/_components/Footer'
 
 
 const STATIC_SERVICES_BOXES = [
@@ -151,86 +152,8 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <InstagramSlider wrapperClass="instagram-section-2 fix" />{/* Footer */}
-      <footer className="footer-section fix bg-cover" style={{ backgroundImage: `url('${footerBg}')` }}>
-        <div className="container">
-          <div className="footer-newsletter">
-            <div className="newsletter-content">
-              <h3>Stay updated with {settings.siteName || 'The ParkQueen Hotel'}</h3>
-              <p>{settings.footer?.tagline || 'At The ParkQueen Hotel, luxury is a crafted experience that blends elegance, comfort, and exceptional service in Rohtak.'}</p>
-            </div>
-            <form action="#">
-              <div className="form-clt">
-                <i className="fa-solid fa-envelope"></i>
-                <input type="text" name="email" id="email-footer-service" placeholder="enter your email" />
-                <button type="submit" className="theme-btn">subscribe now</button>
-              </div>
-            </form>
-          </div>
-          <div className="footer-widget-wrapper">
-            <div className="row">
-              <div className="col-xl-4 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".2s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>About us</h5></div>
-                  <div className="footer-content"><p>{settings.footer?.tagline || 'Welcome to The ParkQueen Hotel, your destination for refined luxury stays and hospitality that feels personal, polished, and effortless.'}</p></div>
-                </div>
-              </div>
-              <div className="col-xl-2 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".4s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>hotel best services</h5></div>
-                  <ul className="list">
-                    <li><a href="/service">Room Booking</a></li>
-                    <li><a href="/service">Special Offers</a></li>
-                    <li><a href="/service">Special Foods</a></li>
-                    <li><a href="/contact">Airport Pickup</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-xl-3 ps-lg-5 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".6s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>check in &amp; out time</h5></div>
-                  <ul className="date-list">
-                    <li>Check In : <span className="style-1">{settings.footer?.checkIn || '12:00 PM'}</span></li>
-                    <li>Check Out : <span>{settings.footer?.checkOut || '11:00 AM'}</span></li>
-                    <li>Open : <span className="style-1">24 Hours / 7 Days</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-xl-3 ps-lg-5 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".8s">
-                <div className="single-footer-widget">
-                  <div className="widget-title"><h5>Contact Us</h5></div>
-                  <ul className="contact-item">
-                    <li><i className="fa-solid fa-location-dot"></i> {address}</li>
-                    <li className="style-2"><i className="fa-solid fa-envelope"></i><a href={`mailto:${email}`}>{email}</a></li>
-                    <li className="style-2"><i className="fa-solid fa-phone"></i><a href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <div className="footer-wrapper">
-              <div className="social-icon wow fadeInLeft" data-wow-delay=".3s">
-                <a href={settings.social?.linkedin  || '#'} aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
-                <a href={settings.social?.twitter   || '#'} aria-label="Twitter"><i className="fa-brands fa-twitter"></i></a>
-                <a href={settings.social?.instagram || '#'} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                <a href={settings.social?.facebook  || '#'} aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-              </div>
-              <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
-                <li><a href="/about">About Us</a></li>
-                <li>/</li>
-                <li><a href="/news">Blog</a></li>
-                <li>/</li>
-                <li><a href="/contact">Contact Us</a></li>
-              </ul>
-              <p className="wow fadeInRight" data-wow-delay=".7s">Copyright&copy; <span>{settings.footer?.copyright || 'The ParkQueen Hotel'}</span></p>
-            </div>
-            <a href="/" className="footer-logo wow fadeInUp" data-wow-delay=".3s">
-              <img style={{ width: '18rem' }} src={settings.logo?.url || '/assets/images/logo.png'} alt="The ParkQueen Hotel" />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <InstagramSlider wrapperClass="instagram-section-2 fix" />
+      <Footer />
     </>
   )
 }
